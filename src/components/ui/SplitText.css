@@ -1,0 +1,14 @@
+.split-parent {
+	/* 🔥 QUITAMOS LO QUE ROMPE */
+	display: inline-block; /* antes era block */
+	position: static; /* antes era relative */
+	width: auto; /* antes fit-content */
+	overflow: visible;
+}
+
+.split-char,
+.split-word,
+.split-line {
+	display: inline-block;
+	will-change: transform, opacity;
+}

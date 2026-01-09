@@ -1,0 +1,73 @@
+/* 🔥 AGREGO LA SEPARACIÓN ENTRE LOS BOTONES */
+.star-item-wrapper {
+	display: inline-flex;
+	margin: 0 10px; /* <-- separación real */
+}
+
+/* =============================== */
+/*    TUS ESTILOS ORIGINALES       */
+/* =============================== */
+
+.star-border-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	border-radius: 20px;
+	overflow: hidden;
+}
+
+.inner-content {
+	position: relative;
+	z-index: 5;
+	background: rgba(0, 0, 0, 0.15) !important;
+	border: 1px solid rgba(255, 255, 255, 0.4) !important;
+	color: white !important;
+	padding: 10px 24px;
+	border-radius: 20px;
+	backdrop-filter: blur(6px);
+	font-weight: 500;
+}
+
+.border-gradient-bottom,
+.border-gradient-top {
+	position: absolute;
+	width: 300%;
+	height: 50%;
+	opacity: 0.7;
+	border-radius: 50%;
+}
+
+.border-gradient-bottom {
+	bottom: -12px;
+	right: -250%;
+	animation: star-movement-bottom 6s linear infinite alternate;
+}
+
+.border-gradient-top {
+	top: -12px;
+	left: -250%;
+	animation: star-movement-top 6s linear infinite alternate;
+}
+
+@keyframes star-movement-bottom {
+	from {
+		transform: translate(0%, 0%);
+		opacity: 1;
+	}
+	to {
+		transform: translate(-100%, 0%);
+		opacity: 0;
+	}
+}
+
+@keyframes star-movement-top {
+	from {
+		transform: translate(0%, 0%);
+		opacity: 1;
+	}
+	to {
+		transform: translate(100%, 0%);
+		opacity: 0;
+	}
+}

@@ -1,6 +1,7 @@
 import './(site)/globals.css';
 import localFont from 'next/font/local';
 import type { Metadata } from 'next';
+import { LanguageProvider } from '@/components/i18n/LanguageProvider';
 
 const sofiaPro = localFont({
 	src: [
@@ -41,7 +42,7 @@ export default function RootLayout({
 			<body
 				className={`${sofiaPro.variable} min-h-screen h-full m-0 bg-black text-white`}
 			>
-				{children}
+				<LanguageProvider>{children}</LanguageProvider>
 			</body>
 		</html>
 	);

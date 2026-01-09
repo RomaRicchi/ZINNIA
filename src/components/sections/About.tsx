@@ -1,4 +1,10 @@
+'use client';
+
+import { useLanguage } from '@/components/i18n/LanguageProvider';
+
 export default function About() {
+	const { t } = useLanguage();
+
 	return (
 		<section
 			id="about"
@@ -9,19 +15,16 @@ export default function About() {
 				id="about-title"
 				className="text-3xl md:text-4xl font-bold text-white text-center"
 			>
-				About Us
+				{t('about.title')}
 			</h2>
 
 			<p className="text-gray-300 text-center mt-4 max-w-3xl mx-auto text-lg">
-				ZINNIA Code is an IT development company based in Argentina. We specialise
-				in building modern websites, mobile applications, backend systems and custom
-				digital solutions for businesses looking to improve efficiency and expand
-				their digital presence.
+				{t('about.description')}
 			</p>
 
 			<div className="mt-16">
 				<h3 className="text-2xl font-semibold text-white text-center mb-10">
-					Our Team
+					{t('about.teamTitle')}
 				</h3>
 
 				<div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2.5rem', width: '100%' }}>
@@ -38,11 +41,10 @@ export default function About() {
 							Fermin Fernandez
 						</h4>
 						<p className="text-gray-300 text-sm mt-1">
-							Full Stack Developer & Co-Founder
+							{t('about.roles.fullStackCoFounder')}
 						</p>
 						<p className="text-gray-400 text-sm mt-4">
-							Backend specialist in .NET, Node.js and scalable architectures.
-							Focused on high-performance systems and business automation.
+							{t('about.team.fermin.bio')}
 						</p>
 						<div className="flex items-center justify-center mt-4 mb-4" style={{ gap: '2rem' }}>
 							<a
@@ -77,15 +79,14 @@ export default function About() {
 							Romanela Ricchiardi
 						</h4>
 						<p className="text-gray-300 text-sm mt-1">
-							Full Stack Developer & Co-Founder
+							{t('about.roles.fullStackCoFounder')}
 						</p>
 						<p className="text-gray-400 text-sm mt-4">
-							Responsible for client communication and ensuring high-quality
-							delivery for businesses looking to grow their digital presence.
+							{t('about.team.romanela.bio')}
 						</p>
 						<div className="flex items-center justify-center mt-4 mb-4" style={{ gap: '2rem' }}>
 							<a
-								href="https://github.com/romanela"
+								href="https://github.com/romaricchi"
 								target="_blank"
 								rel="noopener noreferrer"
 								className="text-cyan-400 hover:text-cyan-300 transition text-sm"
@@ -93,7 +94,7 @@ export default function About() {
 								GitHub
 							</a>
 							<a
-								href="https://linkedin.com/in/romanela-ricchiardi"
+								href="https://linkedin.com/in/romanela-ricchiardi-885284118/"
 								target="_blank"
 								rel="noopener noreferrer"
 								className="text-cyan-400 hover:text-cyan-300 transition text-sm"

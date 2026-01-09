@@ -1,3 +1,7 @@
+'use client';
+
+import { useLanguage } from '@/components/i18n/LanguageProvider';
+
 const technologies = [
   { name: "React", logo: "https://cdn.simpleicons.org/react/61DAFB" },
   { name: "Next.js", logo: "https://cdn.simpleicons.org/nextdotjs/FFFFFF" },
@@ -8,6 +12,8 @@ const technologies = [
 ];
 
 export default function Technologies() {
+  const { t } = useLanguage();
+
   return (
     <section
       id="technologies"
@@ -18,11 +24,11 @@ export default function Technologies() {
         id="technologies-title"
         className="text-3xl md:text-4xl font-bold text-white text-center"
       >
-        Technologies We Use
+        {t('technologies.title')}
       </h2>
 
       <p className="text-gray-300 text-center mt-4 max-w-2xl mx-auto">
-        We choose reliable, modern and secure technologies to deliver long-lasting digital solutions.
+        {t('technologies.description')}
       </p>
 
       <div className="mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10 items-center">

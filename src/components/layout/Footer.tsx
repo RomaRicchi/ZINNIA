@@ -7,7 +7,7 @@ const NAV_ITEMS: { key: Parameters<ReturnType<typeof useSection>['setActiveSecti
 	{ key: 'zinnia', labelKey: 'nav.zinnia' },
 	{ key: 'services', labelKey: 'nav.services' },
 	{ key: 'technologies', labelKey: 'nav.technologies' },
-	{ key: 'portfolio', labelKey: 'nav.portfolio' },
+	// { key: 'portfolio', labelKey: 'nav.portfolio' },
 	{ key: 'about', labelKey: 'nav.about' },
 	{ key: 'contact', labelKey: 'nav.contact' },
 ];
@@ -48,7 +48,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="space-y-3 flex flex-col items-center text-center">
-            <h4 className="text-white font-semibold text-base mb-3">{t('footer.quickLinks')}</h4>
+            <h4 className="font-semibold text-base mb-3" style={{ color: '#a855f7' }}>{t('footer.quickLinks')}</h4>
             <div className="flex flex-col gap-2 text-base">
 							{NAV_ITEMS.map(({ key, labelKey }) => (
 								<button
@@ -64,7 +64,7 @@ export default function Footer() {
 
           {/* Connect */}
           <div className="space-y-3 flex flex-col items-center text-center">
-            <h4 className="text-white font-semibold text-base mb-3">{t('footer.connect')}</h4>
+            <h4 className="font-semibold text-base mb-3" style={{ color: '#a855f7' }}>{t('footer.connect')}</h4>
             <div className="flex flex-col gap-2 text-base">
               <a
                 href="https://github.com/Fermin2049"

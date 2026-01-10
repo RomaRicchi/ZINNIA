@@ -9,7 +9,7 @@ const NAV_ITEMS: { key: SectionKey; labelKey: string }[] = [
 	{ key: 'zinnia', labelKey: 'nav.zinnia' },
 	{ key: 'services', labelKey: 'nav.services' },
 	{ key: 'technologies', labelKey: 'nav.technologies' },
-	{ key: 'portfolio', labelKey: 'nav.portfolio' },
+	// { key: 'portfolio', labelKey: 'nav.portfolio' },
 	{ key: 'about', labelKey: 'nav.about' },
 	{ key: 'contact', labelKey: 'nav.contact' },
 ];
@@ -37,7 +37,7 @@ export default function Header() {
 	}, []);
 
 	return (
-		<header className="fixed top-0 left-0 w-full z-[9999] bg-black/40 backdrop-blur-xl">
+		<header className="fixed top-0 left-0 w-full z-[9999] bg-black/40 backdrop-blur-xl border-b border-white/10">
 			<nav className="max-w-6xl mx-auto px-4 py-4 md:px-6 md:py-5 flex items-center gap-4 relative">
 				<div className="flex items-center gap-3">
 					<button
@@ -105,7 +105,7 @@ export default function Header() {
 								key={key}
 								as="a"
 								href={`#${key}`}
-								color="cyan"
+								color="#a855f7"
 								speed="3s"
 								className="text-white shrink-0"
 								onClick={handleNav(key)}
@@ -115,16 +115,21 @@ export default function Header() {
 						))}
 					</div>
 					<div
-						className="flex items-center gap-2 rounded-full border border-white/20 bg-white/10 p-1 text-xs"
-						style={{ marginLeft: '6px', marginRight: '8px' }}
+						className="flex items-center gap-2 rounded-full p-1 text-xs"
+						style={{
+							marginLeft: '6px',
+							marginRight: '8px',
+							border: '1px solid rgba(168, 85, 247, 0.4)',
+							background: 'rgba(168, 85, 247, 0.1)'
+						}}
 					>
 						<button
 							type="button"
 							className="px-2.5 py-1 rounded-full transition"
 							style={{
-								backgroundColor: language === 'es' ? '#c084fc' : 'transparent',
-								color: language === 'es' ? '#0b0b0b' : '#c084fc',
-								border: '1px solid #c084fc',
+								backgroundColor: language === 'es' ? '#a855f7' : 'transparent',
+								color: language === 'es' ? '#0b0b0b' : '#a855f7',
+								border: '1px solid #a855f7',
 								marginLeft: '6px',
 								marginRight: '6px',
 							}}
@@ -137,9 +142,9 @@ export default function Header() {
 							type="button"
 							className="px-2.5 py-1 rounded-full transition"
 							style={{
-								backgroundColor: language === 'en' ? '#c084fc' : 'transparent',
-								color: language === 'en' ? '#0b0b0b' : '#c084fc',
-								border: '1px solid #c084fc',
+								backgroundColor: language === 'en' ? '#a855f7' : 'transparent',
+								color: language === 'en' ? '#0b0b0b' : '#a855f7',
+								border: '1px solid #a855f7',
 								marginLeft: '6px',
 								marginRight: '6px',
 							}}

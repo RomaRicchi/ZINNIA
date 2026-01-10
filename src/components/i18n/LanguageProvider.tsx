@@ -124,8 +124,10 @@ const translations = {
 		about: {
 			title: 'Sobre nosotros',
 			description:
-				'ZINNIA Code es una empresa de desarrollo IT en Argentina. Nos especializamos en sitios web modernos, aplicaciones móviles, sistemas backend y soluciones digitales a medida para empresas que buscan mejorar la eficiencia y expandir su presencia digital.',
+				'ZINNIA Code es una empresa de desarrollo de software creada en colaboración por dos desarrolladores de la ciudad de San Luis, Argentina, formados en la Universidad de La Punta (ULP). Nacemos con el objetivo de diseñar soluciones digitales sólidas, escalables y alineadas a las necesidades reales de cada negocio.\n\nNos especializamos en el desarrollo de aplicaciones web modernas, sistemas backend robustos y soluciones a medida, combinando buenas prácticas, arquitectura limpia y foco en la calidad del producto final. Creemos en la tecnología como una herramienta estratégica para optimizar procesos, mejorar la eficiencia y acompañar el crecimiento de las empresas.',
 			teamTitle: 'Nuestro equipo',
+			teamDescription:
+				'Somos un equipo técnico que trabaja de forma cercana con cada cliente, priorizando la comunicación clara, la responsabilidad y las entregas bien construidas. Cada proyecto es abordado con una visión integral: entender el problema, proponer la mejor solución y construir software confiable que pueda evolucionar en el tiempo.',
 			roles: {
 				fullStackCoFounder: 'Desarrollador Full Stack y Co-Founder',
 			},
@@ -283,8 +285,10 @@ const translations = {
 		about: {
 			title: 'About us',
 			description:
-				'ZINNIA Code is an IT development company based in Argentina. We specialize in building modern websites, mobile applications, backend systems and custom digital solutions for businesses looking to improve efficiency and expand their digital presence.',
+				'ZINNIA Code is a software development company created in collaboration by two developers from the city of San Luis, Argentina, trained at the University of La Punta (ULP). We were born with the goal of designing solid, scalable digital solutions aligned with the real needs of each business.\n\nWe specialize in developing modern web applications, robust backend systems, and custom solutions, combining best practices, clean architecture, and a focus on the quality of the final product. We believe in technology as a strategic tool to optimize processes, improve efficiency, and support business growth.',
 			teamTitle: 'Our team',
+			teamDescription:
+				'We are a technical team that works closely with each client, prioritizing clear communication, responsibility, and well-built deliveries. Each project is approached with a comprehensive vision: understand the problem, propose the best solution, and build reliable software that can evolve over time.',
 			roles: {
 				fullStackCoFounder: 'Full Stack Developer & Co-Founder',
 			},
@@ -352,14 +356,11 @@ function getTranslation(language: Language, key: string) {
 }
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-	const [language, setLanguage] = useState<Language>(defaultLanguage);
-
-	useEffect(() => {
-		const stored = typeof window === 'undefined' ? null : localStorage.getItem(storageKey);
-		if (stored === 'es' || stored === 'en') {
-			setLanguage(stored);
-		}
-	}, []);
+	const [language, setLanguage] = useState<Language>(() => {
+		if (typeof window === 'undefined') return defaultLanguage;
+		const stored = localStorage.getItem(storageKey);
+		return stored === 'es' || stored === 'en' ? stored : defaultLanguage;
+	});
 
 	useEffect(() => {
 		if (typeof window === 'undefined') return;

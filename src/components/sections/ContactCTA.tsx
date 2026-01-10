@@ -8,14 +8,15 @@ export default function ContactCTA() {
   return (
     <section
       id="contact"
-      className="section-default max-w-4xl mx-auto text-center relative"
+      className="section-default w-full text-center relative pt-32 px-4 md:px-6 lg:px-8"
       aria-labelledby="contact-cta-title"
-      style={{
+    >
+      <div className="w-full" style={{
         backgroundImage: 'url("/img/zinnia.jpg")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        padding: '4rem 2rem',
+        padding: '10rem 2rem',
         borderRadius: '1rem',
         position: 'relative',
       }}
@@ -44,11 +45,25 @@ export default function ContactCTA() {
           {t('contact.description')}
         </p>
 
-        <button
-          className="mt-8 px-10 py-4 rounded-full bg-white/10 backdrop-blur border border-white/20 text-white text-lg hover:bg-white/20 transition"
-        >
-          {t('contact.cta')}
-        </button>
+        <div className="mt-8 flex flex-col md:flex-row gap-4 justify-center items-center">
+          <a
+            href="https://wa.me/5492664297704"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-10 py-4 rounded-full bg-white/10 backdrop-blur border border-white/20 text-white text-lg hover:bg-white/20 transition inline-block"
+          >
+            Contacta a Fermin
+          </a>
+          <a
+            href="https://wa.me/5492664750247"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-10 py-4 rounded-full bg-white/10 backdrop-blur border border-white/20 text-white text-lg hover:bg-white/20 transition inline-block"
+          >
+            Contacta a Roma
+          </a>
+        </div>
+      </div>
       </div>
     </section>
   );

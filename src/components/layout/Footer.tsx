@@ -4,6 +4,7 @@ import { useLanguage } from '@/components/i18n/LanguageProvider';
 import { useSection } from '@/components/layout/SectionProvider';
 
 const NAV_ITEMS: { key: Parameters<ReturnType<typeof useSection>['setActiveSection']>[0]; labelKey: string }[] = [
+	{ key: 'zinnia', labelKey: 'nav.zinnia' },
 	{ key: 'services', labelKey: 'nav.services' },
 	{ key: 'technologies', labelKey: 'nav.technologies' },
 	{ key: 'portfolio', labelKey: 'nav.portfolio' },
@@ -16,7 +17,7 @@ export default function Footer() {
   const { setActiveSection } = useSection();
 
   return (
-    <footer className="!py-12 !px-6 mt-24 border-t border-white/10 bg-black/20 backdrop-blur">
+    <footer className="!py-12 !px-6 border-t border-white/10 bg-black/20 backdrop-blur">
       <style jsx>{`
         .footer-grid {
           display: grid;
@@ -40,15 +41,15 @@ export default function Footer() {
               style={{ width: '272px', height: 'auto' }}
               className="opacity-90"
             />
-            <p className="text-gray-400 text-sm max-w-xs">
+            <p className="text-gray-400 text-base max-w-xs">
               {t('footer.description')}
             </p>
           </div>
 
           {/* Quick Links */}
           <div className="space-y-3 flex flex-col items-center text-center">
-            <h4 className="text-white font-semibold text-sm mb-3">{t('footer.quickLinks')}</h4>
-            <div className="flex flex-col gap-2 text-sm">
+            <h4 className="text-white font-semibold text-base mb-3">{t('footer.quickLinks')}</h4>
+            <div className="flex flex-col gap-2 text-base">
 							{NAV_ITEMS.map(({ key, labelKey }) => (
 								<button
 									key={key}
@@ -63,8 +64,8 @@ export default function Footer() {
 
           {/* Connect */}
           <div className="space-y-3 flex flex-col items-center text-center">
-            <h4 className="text-white font-semibold text-sm mb-3">{t('footer.connect')}</h4>
-            <div className="flex flex-col gap-2 text-sm">
+            <h4 className="text-white font-semibold text-base mb-3">{t('footer.connect')}</h4>
+            <div className="flex flex-col gap-2 text-base">
               <a
                 href="https://github.com/Fermin2049"
                 target="_blank"
@@ -103,7 +104,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="mt-16 pt-8 border-t border-white/10 text-center text-gray-500 text-xs">
+      <div className="mt-16 pt-8 border-t border-white/10 text-center text-sm" style={{ color: '#6B21A8' }}>
         © {new Date().getFullYear()} ZINNIA Code. {t('footer.rights')}
       </div>
     </footer>

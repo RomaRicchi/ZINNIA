@@ -6,6 +6,7 @@ import { useSection, SectionKey } from '@/components/layout/SectionProvider';
 import { useEffect, useState } from 'react';
 
 const NAV_ITEMS: { key: SectionKey; labelKey: string }[] = [
+	{ key: 'zinnia', labelKey: 'nav.zinnia' },
 	{ key: 'services', labelKey: 'nav.services' },
 	{ key: 'technologies', labelKey: 'nav.technologies' },
 	{ key: 'portfolio', labelKey: 'nav.portfolio' },
@@ -98,7 +99,7 @@ export default function Header() {
 					</button>
 				</div>
 				<div className="flex-1 flex items-center justify-end gap-3">
-					<div className="hidden md:flex flex-wrap items-center justify-center gap-4 md:gap-6 text-xs md:text-sm flex-1 min-w-0 px-1">
+					<div className="hidden md:flex flex-nowrap items-center justify-center gap-2 lg:gap-4 text-xs lg:text-sm flex-1 min-w-0 px-1 overflow-x-auto">
 						{NAV_ITEMS.map(({ key, labelKey }) => (
 							<StarBorder
 								key={key}

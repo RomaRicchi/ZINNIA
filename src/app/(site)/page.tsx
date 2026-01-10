@@ -2,6 +2,7 @@
 
 import Header from "@/components/layout/Header";
 import Hero from "@/components/sections/Hero";
+import ZinniaInfo from "@/components/sections/ZinniaInfo";
 import Services from "@/components/sections/Services";
 import Technologies from "@/components/sections/Technologies";
 import Portfolio from "@/components/sections/Portfolio";
@@ -16,6 +17,8 @@ function ActiveSection() {
   switch (activeSection) {
     case 'hero':
       return <Hero />;
+    case 'zinnia':
+      return <ZinniaInfo />;
     case 'services':
       return <Services />;
     case 'technologies':

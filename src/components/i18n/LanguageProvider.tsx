@@ -13,6 +13,7 @@ type LanguageContextValue = {
 const translations = {
 	es: {
 		nav: {
+			zinnia: 'ZINNIA',
 			services: 'Servicios',
 			technologies: 'Tecnologías',
 			portfolio: 'Portafolio',
@@ -89,9 +90,9 @@ const translations = {
 				'Una selección de proyectos reales desarrollados con tecnologías modernas y buenas prácticas.',
 			projects: {
 				businessWebsite: {
-					title: 'Sitio web empresarial para cliente australiano',
+					title: 'Sitio web empresarial para cliente argentino',
 					description:
-						'Sitio empresarial moderno y rápido, enfocado en rendimiento, claridad e identidad de marca.',
+						'Sitio empresarial moderno y rápido, enfocado en rendimiento, claridad e identidad de marca en Argentina.',
 				},
 				propertyApp: {
 					title: 'App de visualización 3D de propiedades (offline)',
@@ -145,6 +146,22 @@ const translations = {
 				'Ya sea que necesites un sitio web, una app móvil o una solución digital completa, podemos ayudarte a convertir tus ideas en realidad con soluciones de TI a medida en Argentina.',
 			cta: 'Contáctanos',
 		},
+		zinniaInfo: {
+			title: 'ZINNIA',
+			brand: 'ZINNIA <Code>',
+			description:
+				'Somos una empresa de desarrollo de software con base en Argentina. Diseñamos y construimos soluciones digitales a medida que ayudan a las empresas a optimizar procesos, escalar su negocio y generar valor real. Desarrollamos aplicaciones web, móviles y sistemas empresariales con foco en calidad, seguridad y mantenibilidad.',
+			featuresTitle: 'Por qué elegirnos',
+			features: {
+				feature1: 'Soluciones 100% personalizadas, alineadas a los objetivos reales de cada negocio',
+				feature2: 'Arquitecturas modernas, escalables y preparadas para crecer junto a tu empresa',
+				feature3: 'Experiencia sólida en backend, full-stack y sistemas críticos orientados a rendimiento',
+				feature4: 'Comunicación clara, procesos transparentes y entregas responsables',
+			},
+			missionTitle: 'Nuestra misión',
+			missionText:
+				'Impulsar el crecimiento digital de empresas mediante soluciones tecnológicas confiables, eficientes y bien diseñadas. Trabajamos de forma cercana con cada cliente para entender su negocio y desarrollar productos que resuelvan problemas reales, aporten valor y puedan evolucionar en el tiempo.',
+		},
 		footer: {
 			description:
 				'Empresa de desarrollo IT en Argentina. Creamos soluciones digitales modernas, rápidas y seguras.',
@@ -155,6 +172,7 @@ const translations = {
 	},
 	en: {
 		nav: {
+			zinnia: 'ZINNIA',
 			services: 'Services',
 			technologies: 'Technologies',
 			portfolio: 'Portfolio',
@@ -231,9 +249,9 @@ const translations = {
 				'A selection of real-world projects built using modern technologies and best development practices.',
 			projects: {
 				businessWebsite: {
-					title: 'Business website for an Australian client',
+					title: 'Business website for an Argentine client',
 					description:
-						'A modern, fast-loading business website built for an Australian client, focused on performance, clarity and brand identity.',
+						'A modern, fast-loading business website built for an Argentine client, focused on performance, clarity and brand identity.',
 				},
 				propertyApp: {
 					title: '3D property visualization app (offline processing)',
@@ -287,6 +305,22 @@ const translations = {
 				'Whether you need a website, mobile app or a complete digital solution, we can help bring your ideas to life with custom IT solutions for businesses in Argentina.',
 			cta: 'Get in touch',
 		},
+		zinniaInfo: {
+			title: 'ZINNIA',
+			brand: 'ZINNIA <Code>',
+			description:
+				'We are a software development company based in Argentina. We design and build tailor-made digital solutions that help businesses optimize processes, scale, and create real value. We develop web applications, mobile apps, and enterprise systems with a focus on quality, security, and maintainability.',
+			featuresTitle: 'Why choose us',
+			features: {
+				feature1: '100% custom solutions aligned to each business\' real goals',
+				feature2: 'Modern, scalable architectures ready to grow with your company',
+				feature3: 'Solid experience in backend, full-stack, and performance-oriented critical systems',
+				feature4: 'Clear communication, transparent processes, and responsible deliveries',
+			},
+			missionTitle: 'Our mission',
+			missionText:
+				'To drive companies\' digital growth through reliable, efficient, and well-designed technology solutions. We work closely with every client to understand their business and deliver products that solve real problems, add value, and can evolve over time.',
+		},
 		footer: {
 			description:
 				'An IT development company based in Argentina. We build modern, fast and secure digital solutions.',
@@ -304,11 +338,11 @@ const storageKey = 'language';
 
 function getTranslation(language: Language, key: string) {
 	const parts = key.split('.');
-	let current: any = translations[language];
+	let current: unknown = translations[language];
 
 	for (const part of parts) {
 		if (current && typeof current === 'object' && part in current) {
-			current = current[part];
+			current = (current as Record<string, unknown>)[part];
 		} else {
 			return key;
 		}

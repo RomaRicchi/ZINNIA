@@ -4,6 +4,7 @@ import React, { createContext, useContext, useState } from 'react';
 
 export type SectionKey =
 	| 'hero'
+	| 'zinnia'
 	| 'services'
 	| 'technologies'
 	| 'portfolio'

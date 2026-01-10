@@ -1,74 +1,123 @@
 'use client';
 
+import Link from 'next/link';
 import StarBorder from '@/components/ui/StarBorder';
 import { useLanguage } from '@/components/i18n/LanguageProvider';
+import { useSection, SectionKey } from '@/components/layout/SectionProvider';
+import { useEffect, useState } from 'react';
+
+const NAV_ITEMS: { key: SectionKey; labelKey: string }[] = [
+	{ key: 'services', labelKey: 'nav.services' },
+	{ key: 'technologies', labelKey: 'nav.technologies' },
+	{ key: 'portfolio', labelKey: 'nav.portfolio' },
+	{ key: 'about', labelKey: 'nav.about' },
+	{ key: 'contact', labelKey: 'nav.contact' },
+];
 
 export default function Header() {
 	const { language, setLanguage, t } = useLanguage();
+	const { setActiveSection, activeSection } = useSection();
+	const [menuOpen, setMenuOpen] = useState(false);
+
+	const handleNav = (section: SectionKey) => (event: React.MouseEvent) => {
+		event.preventDefault();
+		setActiveSection(section);
+		setMenuOpen(false);
+	};
+
+	useEffect(() => {
+		const handleResize = () => {
+			if (window.innerWidth >= 768) {
+				setMenuOpen(false);
+			}
+		};
+
+		window.addEventListener('resize', handleResize);
+		return () => window.removeEventListener('resize', handleResize);
+	}, []);
 
 	return (
 		<header className="fixed top-0 left-0 w-full z-[9999] bg-black/40 backdrop-blur-xl">
-			<nav className="max-w-6xl mx-auto px-6 py-5 flex items-center">
-				<div className="flex-1" />
-				{/* Menu */}
-				<div className="flex gap-6 text-sm justify-center flex-1">
-					<StarBorder
-						as="a"
-						href="#services"
-						color="cyan"
-						speed="3s"
-						className="text-white"
+			<nav className="max-w-6xl mx-auto px-4 py-4 md:px-6 md:py-5 flex items-center gap-4 relative">
+				<div className="flex items-center gap-3">
+					<button
+						type="button"
+						className="menu-toggle-btn inline-flex items-center justify-center md:hidden"
+						onClick={() => setMenuOpen((prev) => !prev)}
+						aria-label="Abrir menú"
+						aria-expanded={menuOpen}
+						style={{ marginLeft: '20px', marginRight: '6px' }}
 					>
-						{t('nav.services')}
-					</StarBorder>
-					<StarBorder
-						as="a"
-						href="#technologies"
-						color="cyan"
-						speed="3s"
-						className="text-white"
+						<span className="sr-only">Toggle menu</span>
+						<div className="menu-toggle-lines">
+							<span className={`menu-toggle-line ${menuOpen ? 'top-open' : ''}`}></span>
+							<span className={`menu-toggle-line ${menuOpen ? 'middle-open' : ''}`}></span>
+							<span className={`menu-toggle-line ${menuOpen ? 'bottom-open' : ''}`}></span>
+						</div>
+					</button>
+					<Link
+						href="/"
+						className="hidden md:inline-block text-white font-bold text-xl"
+						onClick={(e) => {
+							e.preventDefault();
+							handleNav('hero')(e);
+						}}
 					>
-						{t('nav.technologies')}
-					</StarBorder>
-					<StarBorder
-						as="a"
-						href="#portfolio"
-						color="cyan"
-						speed="3s"
-						className="text-white"
-					>
-						{t('nav.portfolio')}
-					</StarBorder>
-					<StarBorder
-						as="a"
-						href="#about"
-						color="cyan"
-						speed="3s"
-						className="text-white"
-					>
-						{t('nav.about')}
-					</StarBorder>
-					<StarBorder
-						as="a"
-						href="#contact"
-						color="cyan"
-						speed="3s"
-						className="text-white"
-					>
-						{t('nav.contact')}
-					</StarBorder>
+						Hexasites
+					</Link>
 				</div>
-				<div className="flex-1 flex justify-end">
+				<div className="absolute left-1/2 -translate-x-1/2 md:relative md:left-auto md:translate-x-0 md:flex md:items-center md:justify-center md:hidden">
+					<button
+						type="button"
+						onClick={handleNav('hero')}
+						aria-pressed={activeSection === 'hero'}
+						className="flex items-center justify-center rounded-full border transition overflow-hidden bg-black"
+						aria-label="Ir al inicio"
+						style={{
+							width: 64,
+							height: 64,
+							padding: 0,
+							borderColor: '#c084fc', // purple-400
+						}}
+					>
+						<img
+							src="/img/logo-solido-chico.png"
+							alt={t('hero.logo1Alt')}
+							style={{ width: '100%', height: '100%' }}
+							className="object-cover"
+						/>
+					</button>
+				</div>
+				<div className="flex-1 flex items-center justify-end gap-3">
+					<div className="hidden md:flex flex-wrap items-center justify-center gap-4 md:gap-6 text-xs md:text-sm flex-1 min-w-0 px-1">
+						{NAV_ITEMS.map(({ key, labelKey }) => (
+							<StarBorder
+								key={key}
+								as="a"
+								href={`#${key}`}
+								color="cyan"
+								speed="3s"
+								className="text-white shrink-0"
+								onClick={handleNav(key)}
+							>
+								{t(labelKey)}
+							</StarBorder>
+						))}
+					</div>
 					<div
 						className="flex items-center gap-2 rounded-full border border-white/20 bg-white/10 p-1 text-xs"
-						role="group"
-						aria-label="Language selector"
+						style={{ marginLeft: '6px', marginRight: '48px' }}
 					>
 						<button
 							type="button"
-							className={`px-2.5 py-1 rounded-full transition ${
-								language === 'es' ? 'bg-cyan-500 text-black' : 'text-white'
-							}`}
+							className="px-2.5 py-1 rounded-full transition"
+							style={{
+								backgroundColor: language === 'es' ? '#c084fc' : 'transparent',
+								color: language === 'es' ? '#0b0b0b' : '#c084fc',
+								border: '1px solid #c084fc',
+								marginLeft: '6px',
+								marginRight: '6px',
+							}}
 							onClick={() => setLanguage('es')}
 							aria-pressed={language === 'es'}
 						>
@@ -76,9 +125,14 @@ export default function Header() {
 						</button>
 						<button
 							type="button"
-							className={`px-2.5 py-1 rounded-full transition ${
-								language === 'en' ? 'bg-cyan-500 text-black' : 'text-white'
-							}`}
+							className="px-2.5 py-1 rounded-full transition"
+							style={{
+								backgroundColor: language === 'en' ? '#c084fc' : 'transparent',
+								color: language === 'en' ? '#0b0b0b' : '#c084fc',
+								border: '1px solid #c084fc',
+								marginLeft: '6px',
+								marginRight: '6px',
+							}}
 							onClick={() => setLanguage('en')}
 							aria-pressed={language === 'en'}
 						>
@@ -86,6 +140,32 @@ export default function Header() {
 						</button>
 					</div>
 				</div>
+
+				{menuOpen && (
+					<div className="md:hidden absolute top-full left-0 w-full bg-gradient-to-b from-purple-900/95 via-purple-900/90 to-purple-800/90 backdrop-blur-lg mt-2 rounded-b-xl shadow-lg">
+						<div className="flex flex-col gap-4 px-4 py-4 text-sm">
+							{NAV_ITEMS.map(({ key, labelKey }) => (
+								<button
+									key={key}
+									onClick={handleNav(key)}
+									className="text-left bg-transparent hover:bg-transparent active:bg-transparent focus:bg-transparent rounded-full px-3 py-1.5 shadow-none outline-none inline-flex w-fit transition-colors focus:ring-0"
+									style={{
+										backgroundColor: 'transparent',
+										color: '#c084fc', // purple-400
+										border: '1px solid #c084fc',
+										padding: '10px 14px',
+										marginLeft: '4px',
+										marginRight: '4px',
+										marginTop: '6px',
+										marginBottom: '6px',
+									}}
+								>
+									{t(labelKey)}
+								</button>
+							))}
+						</div>
+					</div>
+				)}
 			</nav>
 		</header>
 	);

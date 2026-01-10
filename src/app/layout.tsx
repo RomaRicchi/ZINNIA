@@ -1,4 +1,4 @@
-import './(site)/globals.css';
+import './globals.css';
 import localFont from 'next/font/local';
 import type { Metadata } from 'next';
 import { LanguageProvider } from '@/components/i18n/LanguageProvider';

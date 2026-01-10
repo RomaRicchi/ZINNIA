@@ -1,3 +1,5 @@
+'use client';
+
 import Header from "@/components/layout/Header";
 import Hero from "@/components/sections/Hero";
 import Services from "@/components/sections/Services";
@@ -6,20 +8,37 @@ import Portfolio from "@/components/sections/Portfolio";
 import About from "@/components/sections/About";
 import ContactCTA from "@/components/sections/ContactCTA";
 import Footer from "@/components/layout/Footer";
+import { SectionProvider, useSection } from "@/components/layout/SectionProvider";
+
+function ActiveSection() {
+  const { activeSection } = useSection();
+
+  switch (activeSection) {
+    case 'hero':
+      return <Hero />;
+    case 'services':
+      return <Services />;
+    case 'technologies':
+      return <Technologies />;
+    case 'portfolio':
+      return <Portfolio />;
+    case 'about':
+      return <About />;
+    case 'contact':
+      return <ContactCTA />;
+    default:
+      return <Hero />;
+  }
+}
 
 export default function HomePage() {
   return (
-    <>
+    <SectionProvider>
       <Header />
-      <main className="flex flex-col w-full">
-        <Hero />
-        <Services />
-        <Technologies />
-        <Portfolio />
-        <About />
-        <ContactCTA />
+      <main className="flex flex-col w-full flex-1 overflow-y-auto">
+        <ActiveSection />
       </main>
       <Footer />
-    </>
+    </SectionProvider>
   );
 }

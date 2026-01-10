@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import StarBorder from '@/components/ui/StarBorder';
 import { useLanguage } from '@/components/i18n/LanguageProvider';
 import { useSection, SectionKey } from '@/components/layout/SectionProvider';
@@ -55,18 +54,28 @@ export default function Header() {
 							<span className={`menu-toggle-line ${menuOpen ? 'bottom-open' : ''}`}></span>
 						</div>
 					</button>
-					<Link
-						href="/"
-						className="hidden md:inline-block text-white font-bold text-xl"
-						onClick={(e) => {
-							e.preventDefault();
-							handleNav('hero')(e);
+					<button
+						type="button"
+						onClick={handleNav('hero')}
+						aria-pressed={activeSection === 'hero'}
+						className="hidden md:flex items-center justify-center rounded-full border transition overflow-hidden bg-black"
+						aria-label="Ir al inicio"
+						style={{
+							width: 64,
+							height: 64,
+							padding: 0,
+							borderColor: '#c084fc',
 						}}
 					>
-						Hexasites
-					</Link>
+						<img
+							src="/img/logo-solido-chico.png"
+							alt={t('hero.logo1Alt')}
+							style={{ width: '100%', height: '100%' }}
+							className="object-cover"
+						/>
+					</button>
 				</div>
-				<div className="absolute left-1/2 -translate-x-1/2 md:relative md:left-auto md:translate-x-0 md:flex md:items-center md:justify-center md:hidden">
+				<div className="absolute left-1/2 -translate-x-1/2 md:hidden">
 					<button
 						type="button"
 						onClick={handleNav('hero')}
@@ -77,7 +86,7 @@ export default function Header() {
 							width: 64,
 							height: 64,
 							padding: 0,
-							borderColor: '#c084fc', // purple-400
+							borderColor: '#c084fc',
 						}}
 					>
 						<img
@@ -106,7 +115,7 @@ export default function Header() {
 					</div>
 					<div
 						className="flex items-center gap-2 rounded-full border border-white/20 bg-white/10 p-1 text-xs"
-						style={{ marginLeft: '6px', marginRight: '48px' }}
+						style={{ marginLeft: '6px', marginRight: '8px' }}
 					>
 						<button
 							type="button"

@@ -22,6 +22,7 @@ export default function Footer() {
           display: grid;
           grid-template-columns: 1fr;
           gap: 2rem;
+          margin-bottom: 3rem;
         }
         @media (min-width: 768px) {
           .footer-grid {
@@ -102,7 +103,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="mt-12 pt-8 border-t border-white/10 text-center text-gray-500 text-xs">
+      <div className="mt-16 pt-8 border-t border-white/10 text-center text-gray-500 text-xs">
         © {new Date().getFullYear()} ZINNIA Code. {t('footer.rights')}
       </div>
     </footer>

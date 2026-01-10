@@ -14,12 +14,12 @@ export default function Hero() {
 		<section
 			className="relative w-full h-screen flex flex-col items-center justify-center text-center overflow-hidden"
 			aria-label={t('hero.ariaLabel')}
-			style={{ paddingTop: '42px' }} // ensure hero starts below fixed header
+			style={{ paddingTop: '42px', backgroundColor: '#000' }} // ensure hero starts below fixed header
 		>
 			{/* Background animation */}
 			<div
 				className="absolute left-0 right-0 bottom-0 w-full h-full pointer-events-none"
-				style={{ top: '42px', zIndex: 0 }} // match header offset for the animated background
+				style={{ top: '42px', zIndex: 1 }} // match header offset for the animated background
 			>
 				<div className="absolute inset-0 w-full h-full">
 					<FloatingLines
@@ -34,7 +34,7 @@ export default function Hero() {
 				</div>
 			</div>
 			{/* Content */}
-			<main className="hero-content relative max-w-4xl mx-auto px-6 pointer-events-none" style={{ zIndex: 10 }}>
+			<main className="hero-content relative w-full pointer-events-none" style={{ zIndex: 100 }}>
 				<div className="hero-content-inner">
 					<SplitText
 						tag="h1"
@@ -54,12 +54,12 @@ export default function Hero() {
 						<img
 							src="/img/logo-solido-chico-remove.png"
 							alt={t('hero.logo1Alt')}
-							className="w-28 opacity-90 hero-logo"
+							className="opacity-90 hero-logo"
 						/>
 						<img
 							src="/img/ZINNIA-remove.png"
 							alt={t('hero.logo2Alt')}
-							className="w-28 opacity-90 hero-logo"
+							className="opacity-90 hero-logo"
 						/>
 				</div>
 				<div className="hero-content-inner">

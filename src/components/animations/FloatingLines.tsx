@@ -436,7 +436,11 @@ export default function FloatingLines({
 			const h = el.offsetHeight || 1;
 
 			renderer.setSize(w, h);
-			camera.aspect = w / h;
+			const aspect = w / h;
+			camera.left = -aspect;
+			camera.right = aspect;
+			camera.top = 1;
+			camera.bottom = -1;
 			camera.updateProjectionMatrix();
 		};
 

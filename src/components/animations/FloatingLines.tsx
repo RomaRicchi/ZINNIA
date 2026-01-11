@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
 	Scene,
 	OrthographicCamera,
@@ -277,6 +277,17 @@ export default function FloatingLines({
 	const currentInfluenceRef = useRef<number>(0);
 	const targetParallaxRef = useRef<Vector2>(new Vector2(0, 0));
 	const currentParallaxRef = useRef<Vector2>(new Vector2(0, 0));
+	const [isMobile, setIsMobile] = useState(false);
+
+	// Detectar si es móvil (celulares más grandes hasta ~430px)
+	useEffect(() => {
+		const checkMobile = () => {
+			setIsMobile(window.innerWidth <= 430);
+		};
+		checkMobile();
+		window.addEventListener('resize', checkMobile);
+		return () => window.removeEventListener('resize', checkMobile);
+	}, []);
 
 	const getLineCount = (waveType: 'top' | 'middle' | 'bottom'): number => {
 		if (typeof lineCount === 'number') return lineCount;
@@ -311,6 +322,9 @@ export default function FloatingLines({
 		: 0.01;
 
 	useEffect(() => {
+		// Si es móvil, no renderizar la animación WebGL
+		if (isMobile) return;
+
 		if (!containerRef.current) return;
 
 		const scene = new Scene();
@@ -547,7 +561,30 @@ export default function FloatingLines({
 		mouseDamping,
 		parallax,
 		parallaxStrength,
+		isMobile,
 	]);
+
+	// Si es móvil, mostrar imagen estática
+	if (isMobile) {
+		return (
+			<div
+				className="floating-lines-fallback"
+				style={{
+					position: 'absolute',
+					top: 0,
+					left: 0,
+					width: '100%',
+					height: '100%',
+					backgroundImage: 'url(/img/3d.png)',
+					backgroundSize: 'cover',
+					backgroundPosition: 'center',
+					backgroundRepeat: 'no-repeat',
+					opacity: 0.6,
+					pointerEvents: 'none',
+				}}
+			/>
+		);
+	}
 
 	return (
 		<div

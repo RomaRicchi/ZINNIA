@@ -253,17 +253,6 @@ function hexToVec3(hex: string): Vector3 {
 	return new Vector3(r / 255, g / 255, b / 255);
 }
 
-// Detectar soporte WebGL
-function isWebGLSupported(): boolean {
-	try {
-		const canvas = document.createElement('canvas');
-		const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
-		return !!gl;
-	} catch (e) {
-		return false;
-	}
-}
-
 export default function FloatingLines({
 	linesGradient,
 	enabledWaves = ['top', 'middle', 'bottom'],
@@ -288,13 +277,12 @@ export default function FloatingLines({
 	const currentInfluenceRef = useRef<number>(0);
 	const targetParallaxRef = useRef<Vector2>(new Vector2(0, 0));
 	const currentParallaxRef = useRef<Vector2>(new Vector2(0, 0));
-	const [webGLSupported, setWebGLSupported] = useState(true);
 	const [isMobile, setIsMobile] = useState(false);
 
-	// Detectar si es móvil
+	// Detectar si es movil (celulares y pantallas pequenas hasta ~768px)
 	useEffect(() => {
 		const checkMobile = () => {
-			setIsMobile(window.innerWidth <= 767);
+			setIsMobile(window.innerWidth <= 768);
 		};
 		checkMobile();
 		window.addEventListener('resize', checkMobile);
@@ -337,44 +325,17 @@ export default function FloatingLines({
 		// Si es móvil, no renderizar la animación WebGL
 		if (isMobile) return;
 
-		// Detectar soporte WebGL
-		if (!isWebGLSupported()) {
-			setWebGLSupported(false);
-			return;
-		}
-
 		if (!containerRef.current) return;
 
 		const scene = new Scene();
 
-		// Calcular aspect ratio inicial
-		const el = containerRef.current;
-		const initialWidth = el.offsetWidth || 1;
-		const initialHeight = el.offsetHeight || 1;
-		const initialAspect = initialWidth / initialHeight;
-
-		const camera = new OrthographicCamera(
-			-initialAspect,
-			initialAspect,
-			1,
-			-1,
-			0,
-			1
-		);
+		const camera = new OrthographicCamera(-1, 1, 1, -1, 0, 1);
 		camera.position.z = 1;
 
-		let renderer: WebGLRenderer;
-		try {
-			renderer = new WebGLRenderer({ antialias: true, alpha: true });
-		} catch (error) {
-			console.error('Error inicializando WebGL:', error);
-			setWebGLSupported(false);
-			return;
-		}
+		const renderer = new WebGLRenderer({ antialias: true, alpha: true });
 		renderer.setClearColor(0x000000, 0);
 
 		renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-		renderer.setSize(initialWidth, initialHeight);
 		renderer.domElement.style.width = '100%';
 		renderer.domElement.style.height = '100%';
 		containerRef.current.appendChild(renderer.domElement);
@@ -603,8 +564,8 @@ export default function FloatingLines({
 		isMobile,
 	]);
 
-	// Usar imagen estática en móviles o si WebGL no está soportado
-	if (isMobile || !webGLSupported) {
+	// Si es móvil, mostrar imagen estática
+	if (isMobile) {
 		return (
 			<div
 				className="floating-lines-fallback"
@@ -615,10 +576,10 @@ export default function FloatingLines({
 					width: '100%',
 					height: '100%',
 					backgroundImage: 'url(/img/3d.png)',
-					backgroundSize: '100% 100%',
-					backgroundPosition: 'center center',
+					backgroundSize: 'cover',
+					backgroundPosition: 'center',
 					backgroundRepeat: 'no-repeat',
-					opacity: 0.5,
+					opacity: 0.6,
 					pointerEvents: 'none',
 				}}
 			/>
@@ -628,15 +589,9 @@ export default function FloatingLines({
 	return (
 		<div
 			ref={containerRef}
-			className="floating-lines-container"
+			className="floating-lines-container pointer-events-auto"
 			style={{
-				position: 'absolute',
-				top: 0,
-				left: 0,
-				width: '100%',
-				height: '100%',
 				mixBlendMode: mixBlendMode,
-				pointerEvents: interactive ? 'auto' : 'none',
 			}}
 		/>
 	);

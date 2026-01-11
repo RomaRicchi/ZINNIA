@@ -101,6 +101,10 @@
 
 /* Mobile responsiveness */
 @media (max-width: 767px) {
+	section {
+		overflow: hidden !important;
+	}
+
 	.hero-logos-inline {
 		flex-direction: column;
 		gap: 12px;
@@ -119,7 +123,8 @@
 		padding: clamp(16px, 4vw, 32px);
 		gap: 0;
 		position: relative;
-		z-index: 20;
+		z-index: 100 !important;
+		height: 100%;
 	}
 
 	.hero-content-inner {

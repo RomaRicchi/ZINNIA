@@ -14,24 +14,26 @@ export default function Hero() {
 		<section
 			className="relative w-full h-screen flex flex-col items-center justify-center text-center overflow-hidden"
 			aria-label={t('hero.ariaLabel')}
-			style={{ paddingTop: '42px', backgroundColor: '#000' }} // ensure hero starts below fixed header
+			style={{
+				paddingTop: '42px',
+				background: 'linear-gradient(180deg, #0a0a0a 0%, #1a0a2e 50%, #0a0a0a 100%)',
+				zIndex: 1
+			}}
 		>
 			{/* Background animation */}
 			<div
-				className="absolute left-0 right-0 bottom-0 w-full h-full pointer-events-none"
-				style={{ top: '42px', zIndex: 1 }} // match header offset for the animated background
+				className="absolute inset-0 w-full h-full pointer-events-none"
+				style={{ zIndex: -1 }}
 			>
-				<div className="absolute inset-0 w-full h-full">
-					<FloatingLines
-						enabledWaves={['top', 'middle', 'bottom']}
-						lineCount={[10, 15, 20]}
-						lineDistance={[8, 6, 4]}
-						bendRadius={5}
-						bendStrength={-0.5}
-						interactive
-						parallax
-					/>
-				</div>
+				<FloatingLines
+					enabledWaves={['top', 'middle', 'bottom']}
+					lineCount={[10, 15, 20]}
+					lineDistance={[8, 6, 4]}
+					bendRadius={5}
+					bendStrength={-0.5}
+					interactive
+					parallax
+				/>
 			</div>
 			{/* Content */}
 			<main className="hero-content relative w-full pointer-events-none" style={{ zIndex: 100 }}>

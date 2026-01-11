@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  zinnia_web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: zinnia_web
+    restart: always
+    ports:
+      - "4321:3000"
+    environment:
+      - NODE_ENV=production
+      - NEXT_TELEMETRY_DISABLED=1

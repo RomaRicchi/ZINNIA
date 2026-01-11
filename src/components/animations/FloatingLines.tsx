@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
 	Scene,
 	OrthographicCamera,
@@ -253,6 +253,17 @@ function hexToVec3(hex: string): Vector3 {
 	return new Vector3(r / 255, g / 255, b / 255);
 }
 
+// Detectar soporte WebGL
+function isWebGLSupported(): boolean {
+	try {
+		const canvas = document.createElement('canvas');
+		const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+		return !!gl;
+	} catch (e) {
+		return false;
+	}
+}
+
 export default function FloatingLines({
 	linesGradient,
 	enabledWaves = ['top', 'middle', 'bottom'],
@@ -277,6 +288,18 @@ export default function FloatingLines({
 	const currentInfluenceRef = useRef<number>(0);
 	const targetParallaxRef = useRef<Vector2>(new Vector2(0, 0));
 	const currentParallaxRef = useRef<Vector2>(new Vector2(0, 0));
+	const [webGLSupported, setWebGLSupported] = useState(true);
+	const [isMobile, setIsMobile] = useState(false);
+
+	// Detectar si es móvil
+	useEffect(() => {
+		const checkMobile = () => {
+			setIsMobile(window.innerWidth <= 767);
+		};
+		checkMobile();
+		window.addEventListener('resize', checkMobile);
+		return () => window.removeEventListener('resize', checkMobile);
+	}, []);
 
 	const getLineCount = (waveType: 'top' | 'middle' | 'bottom'): number => {
 		if (typeof lineCount === 'number') return lineCount;
@@ -311,17 +334,44 @@ export default function FloatingLines({
 		: 0.01;
 
 	useEffect(() => {
+		// Detectar soporte WebGL
+		if (!isWebGLSupported()) {
+			setWebGLSupported(false);
+			return;
+		}
+
 		if (!containerRef.current) return;
 
 		const scene = new Scene();
 
-		const camera = new OrthographicCamera(-1, 1, 1, -1, 0, 1);
+		// Calcular aspect ratio inicial
+		const el = containerRef.current;
+		const initialWidth = el.offsetWidth || 1;
+		const initialHeight = el.offsetHeight || 1;
+		const initialAspect = initialWidth / initialHeight;
+
+		const camera = new OrthographicCamera(
+			-initialAspect,
+			initialAspect,
+			1,
+			-1,
+			0,
+			1
+		);
 		camera.position.z = 1;
 
-		const renderer = new WebGLRenderer({ antialias: true, alpha: true });
+		let renderer: WebGLRenderer;
+		try {
+			renderer = new WebGLRenderer({ antialias: true, alpha: true });
+		} catch (error) {
+			console.error('Error inicializando WebGL:', error);
+			setWebGLSupported(false);
+			return;
+		}
 		renderer.setClearColor(0x000000, 0);
 
 		renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+		renderer.setSize(initialWidth, initialHeight);
 		renderer.domElement.style.width = '100%';
 		renderer.domElement.style.height = '100%';
 		containerRef.current.appendChild(renderer.domElement);
@@ -549,12 +599,40 @@ export default function FloatingLines({
 		parallaxStrength,
 	]);
 
+	// Usar imagen estática en móviles o si WebGL no está soportado
+	if (isMobile || !webGLSupported) {
+		return (
+			<div
+				className="floating-lines-fallback"
+				style={{
+					position: 'absolute',
+					top: 0,
+					left: 0,
+					width: '100%',
+					height: '100%',
+					backgroundImage: 'url(/img/3d.png)',
+					backgroundSize: '100% 100%',
+					backgroundPosition: 'center center',
+					backgroundRepeat: 'no-repeat',
+					opacity: 0.5,
+					pointerEvents: 'none',
+				}}
+			/>
+		);
+	}
+
 	return (
 		<div
 			ref={containerRef}
-			className="floating-lines-container pointer-events-auto"
+			className="floating-lines-container"
 			style={{
+				position: 'absolute',
+				top: 0,
+				left: 0,
+				width: '100%',
+				height: '100%',
 				mixBlendMode: mixBlendMode,
+				pointerEvents: interactive ? 'auto' : 'none',
 			}}
 		/>
 	);

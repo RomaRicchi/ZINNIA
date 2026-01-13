@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import { LanguageProvider } from '@/components/i18n/LanguageProvider';
 import { seo } from './(site)/seo.config';
 import StructuredData from '@/components/StructuredData';
+import GoogleAnalytics from '@/components/GoogleAnalytics';
 
 const sofiaPro = localFont({
 	src: [
@@ -77,6 +78,9 @@ export default function RootLayout({
 			>
 				<StructuredData />
 				<LanguageProvider>{children}</LanguageProvider>
+				{process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
+					<GoogleAnalytics measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
+				)}
 			</body>
 		</html>
 	);

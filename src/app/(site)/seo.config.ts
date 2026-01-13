@@ -39,7 +39,7 @@ const seoByLang: Record<Language, SeoConfig> = {
 			title: 'ZINNIA<code> — Soluciones de TI modernas en Argentina',
 			description:
 				'Sitios, apps y soluciones digitales de alto rendimiento para empresas argentinas.',
-			url: 'https://zinniacode.com.ar',
+			url: 'https://zinnia-code.com.ar',
 			siteName: 'ZINNIA<code>',
 			locale: 'es_AR',
 			type: 'website',
@@ -50,7 +50,7 @@ const seoByLang: Record<Language, SeoConfig> = {
 			description:
 				'Sitios web, aplicaciones y soluciones digitales para empresas en Argentina.',
 		},
-		canonical: 'https://zinniacode.com.ar',
+		canonical: 'https://zinnia-code.com.ar',
 	},
 	en: {
 		title: 'ZINNIA<code> — Modern IT solutions in Argentina',
@@ -70,7 +70,7 @@ const seoByLang: Record<Language, SeoConfig> = {
 			title: 'ZINNIA<code> — Modern IT solutions in Argentina',
 			description:
 				'High-performance websites, apps and digital solutions for Argentine businesses.',
-			url: 'https://zinniacode.com.ar',
+			url: 'https://zinnia-code.com.ar',
 			siteName: 'ZINNIA<code>',
 			locale: 'en_AR',
 			type: 'website',
@@ -81,7 +81,7 @@ const seoByLang: Record<Language, SeoConfig> = {
 			description:
 				'Websites, applications and digital solutions for businesses in Argentina.',
 		},
-		canonical: 'https://zinniacode.com.ar',
+		canonical: 'https://zinnia-code.com.ar',
 	},
 };
 

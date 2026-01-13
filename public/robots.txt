@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://zinniacode.com.ar/sitemap.xml
+Sitemap: https://zinnia-code.com.ar/sitemap.xml

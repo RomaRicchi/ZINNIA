@@ -28,6 +28,7 @@ const sofiaPro = localFont({
 });
 
 export const metadata: Metadata = {
+	metadataBase: new URL('https://zinnia-code.com.ar'),
 	title: seo.title,
 	description: seo.description,
 	keywords: seo.keywords,

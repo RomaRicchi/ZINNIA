@@ -16,6 +16,12 @@ export default function Footer() {
   const { t } = useLanguage();
   const { setActiveSection } = useSection();
 
+  const handleNavClick = (section: Parameters<typeof setActiveSection>[0]) => {
+    setActiveSection(section);
+    // Scroll al inicio de la página con animación suave
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <footer className="!py-12 !px-6 border-t border-white/10 bg-black/20 backdrop-blur">
       <div className="max-w-6xl mx-auto">
@@ -40,7 +46,7 @@ export default function Footer() {
 							{NAV_ITEMS.map(({ key, labelKey }) => (
 								<button
 									key={key}
-									onClick={() => setActiveSection(key)}
+									onClick={() => handleNavClick(key)}
 									className="text-center text-gray-300 hover:text-cyan-400 transition bg-transparent border border-transparent shadow-none outline-none"
 								>
 									{t(labelKey)}

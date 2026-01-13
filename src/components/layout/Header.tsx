@@ -23,6 +23,8 @@ export default function Header() {
 		event.preventDefault();
 		setActiveSection(section);
 		setMenuOpen(false);
+		// Scroll al inicio de la página con animación suave
+		window.scrollTo({ top: 0, behavior: 'smooth' });
 	};
 
 	useEffect(() => {

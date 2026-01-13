@@ -356,17 +356,24 @@ function getTranslation(language: Language, key: string) {
 }
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-	const [language, setLanguage] = useState<Language>(() => {
-		if (typeof window === 'undefined') return defaultLanguage;
-		const stored = localStorage.getItem(storageKey);
-		return stored === 'es' || stored === 'en' ? stored : defaultLanguage;
-	});
+	const [mounted, setMounted] = useState(false);
+	const [language, setLanguage] = useState<Language>(defaultLanguage);
 
+	// Solo leer localStorage después del montaje del cliente
 	useEffect(() => {
-		if (typeof window === 'undefined') return;
+		setMounted(true);
+		const stored = localStorage.getItem(storageKey);
+		if (stored === 'es' || stored === 'en') {
+			setLanguage(stored);
+		}
+	}, []);
+
+	// Guardar idioma y actualizar document.lang
+	useEffect(() => {
+		if (!mounted) return;
 		localStorage.setItem(storageKey, language);
 		document.documentElement.lang = language;
-	}, [language]);
+	}, [language, mounted]);
 
 	const value = useMemo<LanguageContextValue>(
 		() => ({

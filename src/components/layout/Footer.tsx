@@ -18,21 +18,8 @@ export default function Footer() {
 
   return (
     <footer className="!py-12 !px-6 border-t border-white/10 bg-black/20 backdrop-blur">
-      <style jsx>{`
-        .footer-grid {
-          display: grid;
-          grid-template-columns: 1fr;
-          gap: 2rem;
-          margin-bottom: 3rem;
-        }
-        @media (min-width: 768px) {
-          .footer-grid {
-            grid-template-columns: repeat(3, 1fr);
-          }
-        }
-      `}</style>
       <div className="max-w-6xl mx-auto">
-        <div className="footer-grid">
+        <div className="grid grid-cols-1 gap-8 mb-12 md:grid-cols-3">
           {/* Company Info */}
           <div className="space-y-3 flex flex-col items-center text-center">
             <img

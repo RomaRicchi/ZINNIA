@@ -16,23 +16,16 @@ export default function Footer() {
   const { t } = useLanguage();
   const { setActiveSection } = useSection();
 
+  const handleNavClick = (section: Parameters<typeof setActiveSection>[0]) => {
+    setActiveSection(section);
+    // Scroll al inicio de la página con animación suave
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <footer className="!py-12 !px-6 border-t border-white/10 bg-black/20 backdrop-blur">
-      <style jsx>{`
-        .footer-grid {
-          display: grid;
-          grid-template-columns: 1fr;
-          gap: 2rem;
-          margin-bottom: 3rem;
-        }
-        @media (min-width: 768px) {
-          .footer-grid {
-            grid-template-columns: repeat(3, 1fr);
-          }
-        }
-      `}</style>
       <div className="max-w-6xl mx-auto">
-        <div className="footer-grid">
+        <div className="grid grid-cols-1 gap-8 mb-12 md:grid-cols-3">
           {/* Company Info */}
           <div className="space-y-3 flex flex-col items-center text-center">
             <img
@@ -53,7 +46,7 @@ export default function Footer() {
 							{NAV_ITEMS.map(({ key, labelKey }) => (
 								<button
 									key={key}
-									onClick={() => setActiveSection(key)}
+									onClick={() => handleNavClick(key)}
 									className="text-center text-gray-300 hover:text-cyan-400 transition bg-transparent border border-transparent shadow-none outline-none"
 								>
 									{t(labelKey)}

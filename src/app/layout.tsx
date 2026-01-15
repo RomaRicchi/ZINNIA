@@ -1,10 +1,15 @@
 import './globals.css';
 import localFont from 'next/font/local';
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { LanguageProvider } from '@/components/i18n/LanguageProvider';
 import { seo } from './(site)/seo.config';
 import StructuredData from '@/components/StructuredData';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
+
+export const viewport: Viewport = {
+	width: 'device-width',
+	initialScale: 1,
+};
 
 const sofiaPro = localFont({
 	src: [
@@ -32,7 +37,6 @@ export const metadata: Metadata = {
 	title: seo.title,
 	description: seo.description,
 	keywords: seo.keywords,
-	viewport: 'width=device-width, initial-scale=1',
 	icons: {
 		icon: '/img/logo-solido-chico-remove.png',
 		apple: '/img/logo-solido-chico-remove.png',

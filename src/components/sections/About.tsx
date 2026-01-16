@@ -70,7 +70,7 @@ export default function About() {
 					<div className="flex flex-col items-center text-center bg-white/5 border border-white/10 rounded-xl" style={{ padding: '3rem 2rem' }}>
 						<div style={{ width: '160px', height: '160px', minWidth: '160px', minHeight: '160px', flexShrink: 0 }} className="rounded-full overflow-hidden bg-white/10 mb-4">
 							<img
-								src="/images/team/fermin.png"
+								src="/images/team/fermin.webp"
 								alt="Fermin Fernandez"
 								style={{ width: '160px', height: '160px', objectFit: 'cover' }}
 							/>
@@ -106,11 +106,11 @@ export default function About() {
 
 					{/* Romanela Ricchiardi - Columna Derecha */}
 					<div className="flex flex-col items-center text-center bg-white/5 border border-white/10 rounded-xl" style={{ padding: '3rem 2rem' }}>
-						<div style={{ width: '160px', height: '160px', minWidth: '160px', minHeight: '160px', flexShrink: 0 }} className="rounded-full overflow-hidden bg-white/10 mb-4">
+						<div style={{ width: '160px', height: '160px', minWidth: '160px', minHeight: '160px', flexShrink: 0 }} className="rounded-full overflow-hidden bg-white mb-4">
 							<img
-								src="/images/team/roma.jpeg"
+								src="/images/team/roma1024.webp"
 								alt="Romanela Ricchiardi"
-								style={{ width: '160px', height: '160px', objectFit: 'cover' }}
+								style={{ width: '160px', height: '160px', objectFit: 'contain' }}
 							/>
 						</div>
 						<h4 className="text-xl font-semibold" style={{ color: '#a855f7' }}>

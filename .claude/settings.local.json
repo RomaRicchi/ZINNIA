@@ -3,7 +3,14 @@
     "allow": [
       "Bash(npm run dev:*)",
       "Bash(npm run build:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(sshpass:*)",
+      "Bash(where:*)",
+      "Bash(wsl:*)",
+      "Bash(powershell.exe -Command \"ssh -o StrictHostKeyChecking=no -p 5985 root@66.97.36.54 ''ls -la /var/www/''\")",
+      "Bash(powershell.exe:*)",
+      "Bash(npm audit:*)",
+      "Bash(npm view:*)"
     ]
   }
 }

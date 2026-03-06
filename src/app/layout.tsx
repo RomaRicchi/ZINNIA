@@ -81,8 +81,10 @@ export default function RootLayout({
 			<body
 				className={`${sofiaPro.variable} min-h-screen h-full m-0 bg-black text-white`}
 			>
-				<StructuredData />
-				<LanguageProvider>{children}</LanguageProvider>
+				<LanguageProvider>
+					<StructuredData />
+					{children}
+				</LanguageProvider>
 				{process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
 					<GoogleAnalytics measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
 				)}

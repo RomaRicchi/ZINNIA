@@ -11,7 +11,9 @@ export default function Hero() {
 	const { t, language } = useLanguage();
 
 	return (
+		<>
 		<section
+			id="hero"
 			className="relative w-full h-screen flex flex-col items-center justify-center text-center overflow-hidden"
 			aria-label={t('hero.ariaLabel')}
 			style={{
@@ -82,9 +84,13 @@ export default function Hero() {
 					<button className="hero-button pointer-events-auto">
 						{t('hero.cta')}
 					</button>
-			
+
 				</div>
 			</main>
 		</section>
+
+		{/* Separador visual entre secciones */}
+		<div className="w-full bg-black" style={{ height: '8px' }}></div>
+		</>
 	);
 }

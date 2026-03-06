@@ -21,10 +21,13 @@ export default function Header() {
 
 	const handleNav = (section: SectionKey) => (event: React.MouseEvent) => {
 		event.preventDefault();
-		setActiveSection(section);
 		setMenuOpen(false);
-		// Scroll al inicio de la página con animación suave
-		window.scrollTo({ top: 0, behavior: 'smooth' });
+
+		// Scroll suave a la sección correspondiente
+		const element = document.getElementById(section);
+		if (element) {
+			element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+		}
 	};
 
 	useEffect(() => {
@@ -61,17 +64,16 @@ export default function Header() {
 						type="button"
 						onClick={handleNav('hero')}
 						aria-pressed={activeSection === 'hero'}
-						className="hidden md:flex items-center justify-center rounded-full border transition overflow-hidden bg-black"
+						className="hidden md:flex items-center justify-center transition overflow-hidden"
 						aria-label="Ir al inicio"
 						style={{
-							width: 64,
-							height: 64,
+							width: 80,
+							height: 80,
 							padding: 0,
-							borderColor: '#c084fc',
 						}}
 					>
 						<img
-							src="/img/logo-solido-chico.png"
+							src="/img/logo-solido-chico-remove.png"
 							alt={t('hero.logo1Alt')}
 							style={{ width: '100%', height: '100%' }}
 							className="object-cover"
@@ -83,17 +85,16 @@ export default function Header() {
 						type="button"
 						onClick={handleNav('hero')}
 						aria-pressed={activeSection === 'hero'}
-						className="flex items-center justify-center rounded-full border transition overflow-hidden bg-black"
+						className="flex items-center justify-center transition overflow-hidden"
 						aria-label="Ir al inicio"
 						style={{
-							width: 64,
-							height: 64,
+							width: 80,
+							height: 80,
 							padding: 0,
-							borderColor: '#c084fc',
 						}}
 					>
 						<img
-							src="/img/logo-solido-chico.png"
+							src="/img/logo-solido-chico-remove.png"
 							alt={t('hero.logo1Alt')}
 							style={{ width: '100%', height: '100%' }}
 							className="object-cover"
@@ -168,13 +169,14 @@ export default function Header() {
 									className="text-left bg-transparent hover:bg-transparent active:bg-transparent focus:bg-transparent rounded-full px-3 py-1.5 shadow-none outline-none inline-flex w-fit transition-colors focus:ring-0"
 									style={{
 										backgroundColor: 'transparent',
-										color: '#c084fc', // purple-400
-										border: '1px solid #c084fc',
+										color: '#ffffff',
+										border: '1px solid #ffffff',
 										padding: '10px 14px',
 										marginLeft: '4px',
 										marginRight: '4px',
 										marginTop: '6px',
 										marginBottom: '6px',
+										fontWeight: 'bold',
 									}}
 								>
 									{t(labelKey)}

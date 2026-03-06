@@ -8,7 +8,8 @@ export default function ZinniaInfo() {
   const { t } = useLanguage();
 
   return (
-    <section id="zinnia-info" className="zinnia-section section-bg" aria-labelledby="zinnia-title">
+    <>
+    <section id="zinnia" className="zinnia-section section-bg" aria-labelledby="zinnia-title">
       <div className="zinnia-container">
         <div className="zinnia-title-container">
           <img
@@ -75,5 +76,9 @@ export default function ZinniaInfo() {
         </div>
       </div>
     </section>
+
+    {/* Separador visual entre secciones */}
+    <div className="w-full bg-black" style={{ height: '8px' }}></div>
+    </>
   );
 }

@@ -17,14 +17,32 @@ export default function Footer() {
   const { setActiveSection } = useSection();
 
   const handleNavClick = (section: Parameters<typeof setActiveSection>[0]) => {
-    setActiveSection(section);
-    // Scroll al inicio de la página con animación suave
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Scroll suave a la sección correspondiente
+    const element = document.getElementById(section);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   };
 
   return (
-    <footer className="!py-12 !px-6 border-t border-white/10 bg-black/20 backdrop-blur">
-      <div className="max-w-6xl mx-auto">
+    <footer
+      className="!py-12 !px-6 border-t border-white/10 relative overflow-hidden"
+      style={{
+        backgroundImage: 'url("/images/foot.webp")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
+    >
+      {/* Overlay oscuro para mejor legibilidad */}
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundColor: 'rgba(0, 0, 0, 0.8)',
+        }}
+      />
+
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="grid grid-cols-1 gap-8 mb-12 md:grid-cols-3">
           {/* Company Info */}
           <div className="space-y-3 flex flex-col items-center text-center">
@@ -32,7 +50,7 @@ export default function Footer() {
               src="/img/titulo-solido.png"
               alt={t('hero.logo1Alt')}
               style={{ width: '272px', height: 'auto' }}
-              className="opacity-90"
+              className="opacity-90 rounded-lg"
             />
             <p className="text-gray-400 text-base max-w-xs">
               {t('footer.description')}
@@ -97,7 +115,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="mt-16 pt-8 border-t border-white/10 text-center text-sm" style={{ color: '#6B21A8' }}>
+      <div className="mt-16 pt-8 border-t border-white/10 text-center text-sm relative z-10" style={{ color: '#6B21A8' }}>
         © {new Date().getFullYear()} ZINNIA Code. {t('footer.rights')}
       </div>
     </footer>

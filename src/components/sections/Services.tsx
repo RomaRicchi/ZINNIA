@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { Briefcase, ChevronDown, Cloud, Code, Server, Smartphone, TrendingUp } from 'lucide-react';
 import './services.css';
 import { useLanguage } from '@/components/i18n/LanguageProvider';
+import { sanitizeHtml } from '@/utils/sanitize';
 
 const servicesData = [
   {
@@ -89,7 +90,7 @@ export default function Services() {
                     <div className="service-text">
                       <p
                         className="service-description"
-                        dangerouslySetInnerHTML={{ __html: description }}
+                        dangerouslySetInnerHTML={{ __html: sanitizeHtml(description) }}
                       />
                       <p className="service-details">
                         <strong>{t('services.detailsLabel')}:</strong> {details}

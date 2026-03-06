@@ -30,24 +30,24 @@ const translations = {
 			cta: 'Solicita una consulta gratuita',
 		},
 		services: {
-			title: 'Nuestros servicios de desarrollo premium',
+			title: 'Nuestros servicios de desarrollo de código y programación',
 			subtitle:
-				'Hace clic en un servicio para ver soluciones tecnológicas y áreas de enfoque detalladas.',
+				'Haz clic en un servicio para ver soluciones tecnológicas para negocios y áreas de enfoque detalladas.',
 			detailsLabel: 'Detalles clave',
 			items: {
 				fullStack: {
-					title: 'Desarrollo web full stack (React / Next.js)',
+					title: 'Desarrollo web full stack y programación de código (React / Next.js)',
 					description:
-						'**Desarrollo moderno y de alto rendimiento:** Creamos aplicaciones web completas y escalables. Usamos **Next.js** y **React** para garantizar cargas ultrarrápidas (SSR/SSG), excelente SEO y una experiencia fluida, ideal para dashboards, portales de clientes y plataformas empresariales.',
+						'**Desarrollo moderno de código y programación:** Creamos aplicaciones web completas y escalables mediante programación profesional. Usamos **Next.js** y **React** para garantizar cargas ultrarrápidas (SSR/SSG), excelente SEO y una experiencia fluida, ideal para dashboards, portales de clientes y plataformas empresariales.',
 					details:
-						'Especializados en TypeScript, diseño responsive con Tailwind CSS, optimización de velocidad (Core Web Vitals) y arquitectura modular para mantenimiento sencillo.',
+						'Especializados en programación de código limpio, TypeScript, diseño responsive con Tailwind CSS, optimización de velocidad (Core Web Vitals) y arquitectura modular para mantenimiento sencillo.',
 				},
 				backend: {
-					title: 'Backend y desarrollo de APIs (.NET Core / Node.js)',
+					title: 'Backend, programación de código y desarrollo de APIs (.NET Core / Node.js)',
 					description:
-						'**Sistemas centrales robustos y seguros:** Diseñamos y construimos la infraestructura que impulsa tu aplicación. Nos enfocamos en APIs RESTful y GraphQL usando **.NET Core** (C#) o **Node.js/Express**, garantizando seguridad, rendimiento y escalabilidad horizontal.',
+						'**Sistemas centrales robustos y seguros mediante programación de código:** Diseñamos y construimos la infraestructura de código que impulsa tu aplicación. Nos enfocamos en programación de APIs RESTful y GraphQL usando **.NET Core** (C#) o **Node.js/Express**, garantizando seguridad, rendimiento y escalabilidad horizontal.',
 					details:
-						'Implementación de Clean Architecture/DDD, autenticación avanzada (JWT), gestión de bases de datos (SQL Server, PostgreSQL) y pruebas exhaustivas.',
+						'Implementación de Clean Architecture/DDD, programación de autenticación avanzada (JWT), gestión de bases de datos (SQL Server, PostgreSQL) y pruebas exhaustivas.',
 				},
 				mobile: {
 					title: 'Desarrollo de apps móviles (Android y React Native)',
@@ -64,25 +64,35 @@ const translations = {
 						'Configuración de alta disponibilidad, estrategias de backup, reducción de costos cloud y optimización de seguridad.',
 				},
 				business: {
-					title: 'Sistemas empresariales y automatización',
+					title: 'Sistemas empresariales y automatización de código',
 					description:
-						'**Eficiencia a través del software:** Transformamos procesos manuales en sistemas automatizados. Creamos software a medida como sistemas de inventario, CRMs internos, reservas y plataformas de analítica.',
+						'**Soluciones tecnológicas para negocios mediante programación de código:** Transformamos procesos manuales en sistemas automatizados mediante desarrollo de código a medida. Creamos software empresarial como sistemas de inventario, CRMs internos y plataformas de analítica.',
 					details:
-						'Integración con sistemas legacy, desarrollo de módulos de pago personalizados y automatización de reportes y email marketing.',
+						'Programación de código para integración con sistemas legacy, desarrollo de módulos de pago personalizados y automatización de reportes.',
 				},
 				consulting: {
-					title: 'Consultoría técnica y asesoría de software',
+					title: 'Consultoría técnica, programación y asesoría de código de software',
 					description:
-						'**Orientación tecnológica estratégica:** Ofrecemos consultoría experta para ayudarte a decidir sobre stack, arquitectura y roadmap de desarrollo. Ideal para startups o empresas en transformación digital.',
+						'**Soluciones tecnológicas para negocios mediante consultoría de programación:** Ofrecemos consultoría experta en desarrollo de código y programación para ayudarte a decidir sobre stack, arquitectura y roadmap de desarrollo. Ideal para startups o empresas en transformación digital buscando soluciones tecnológicas.',
 					details:
-						'Auditoría de código, planificación de migraciones, estimación de proyectos y capacitación de equipos técnicos internos.',
+						'Auditoría de programación de código, planificación de migraciones de código, estimación de proyectos de programación y capacitación de equipos técnicos internos.',
 				},
 			},
 		},
 		technologies: {
-			title: 'Tecnologías que usamos',
+			title: 'Tecnologías de programación de código que usamos',
 			description:
-				'Elegimos tecnologías confiables, modernas y seguras para soluciones digitales duraderas.',
+				'Elegimos tecnologías confiables, modernas y seguras para desarrollar soluciones tecnológicas para negocios mediante programación de código profesional.',
+		},
+		stats: {
+			title: 'Nuestros logros en código y programación',
+			description: 'Años de experiencia desarrollando soluciones tecnológicas para negocios mediante programación profesional',
+			projectsCompleted: 'Proyectos completados',
+			yearsExperience: 'Años de experiencia',
+			satisfiedClients: 'Clientes satisfechos',
+			coffeeCups: 'Tazas de café',
+			ourClientsTitle: 'Nuestros clientes',
+			ourClientsDescription: 'Empresas que confían en nuestra programación de código',
 		},
 		portfolio: {
 			title: 'Portafolio',
@@ -124,7 +134,7 @@ const translations = {
 		about: {
 			title: 'Sobre nosotros',
 			description:
-				'ZINNIA Code es una empresa de desarrollo de software creada en colaboración por dos desarrolladores de la ciudad de San Luis, Argentina, formados en la Universidad de La Punta (ULP). Nacemos con el objetivo de diseñar soluciones digitales sólidas, escalables y alineadas a las necesidades reales de cada negocio.\n\nNos especializamos en el desarrollo de aplicaciones web modernas, sistemas backend robustos y soluciones a medida, combinando buenas prácticas, arquitectura limpia y foco en la calidad del producto final. Creemos en la tecnología como una herramienta estratégica para optimizar procesos, mejorar la eficiencia y acompañar el crecimiento de las empresas.',
+				'ZINNIA Code es una empresa de desarrollo de código y programación de software creada en colaboración por dos programadores de la ciudad de San Luis, Argentina, formados en la Universidad de La Punta (ULP). Nacemos con el objetivo de diseñar soluciones tecnológicas para negocios mediante programación de código de alta calidad.\n\nNos especializamos en la programación de aplicaciones web modernas, desarrollo de código de sistemas backend robustos y soluciones a medida mediante programación profesional, combinando buenas prácticas de código, arquitectura limpia y foco en la calidad del producto final. Creemos en la programación de código como una herramienta estratégica para optimizar procesos, mejorar la eficiencia y acompañar el crecimiento de las empresas.',
 			teamTitle: 'Nuestro equipo',
 			teamDescription:
 				'Somos un equipo técnico que trabaja de forma cercana con cada cliente, priorizando la comunicación clara, la responsabilidad y las entregas bien construidas. Cada proyecto es abordado con una visión integral: entender el problema, proponer la mejor solución y construir software confiable que pueda evolucionar en el tiempo.',
@@ -143,30 +153,30 @@ const translations = {
 			},
 		},
 		contact: {
-			title: '¿Listo para empezar tu próximo proyecto?',
+			title: '¿Listo para empezar tu proyecto de programación de código?',
 			description:
-				'Ya sea que necesites un sitio web, una app móvil o una solución digital completa, podemos ayudarte a convertir tus ideas en realidad con soluciones de TI a medida en Argentina.',
+				'Ya sea que necesites desarrollo de código, programación de software, un sitio web, una app móvil o una solución digital completa, podemos ayudarte a convertir tus ideas en realidad con soluciones tecnológicas para negocios mediante programación profesional en Argentina.',
 			cta: 'Contáctanos',
 		},
 		zinniaInfo: {
 			title: 'ZINNIA',
 			brand: 'ZINNIA <Code>',
 			description:
-				'Somos una empresa de desarrollo de software con base en Argentina. Diseñamos y construimos soluciones digitales a medida que ayudan a las empresas a optimizar procesos, escalar su negocio y generar valor real. Desarrollamos aplicaciones web, móviles y sistemas empresariales con foco en calidad, seguridad y mantenibilidad.',
+				'Somos una empresa de programación de código y desarrollo de software con base en Argentina. Diseñamos y construimos soluciones tecnológicas para negocios mediante desarrollo de código que ayudan a las empresas a optimizar procesos, escalar su negocio y generar valor real. Desarrollamos aplicaciones web mediante programación, móviles y sistemas empresariales con foco en calidad de código, seguridad y mantenibilidad.',
 			featuresTitle: 'Por qué elegirnos',
 			features: {
-				feature1: 'Soluciones 100% personalizadas, alineadas a los objetivos reales de cada negocio',
-				feature2: 'Arquitecturas modernas, escalables y preparadas para crecer junto a tu empresa',
-				feature3: 'Experiencia sólida en backend, full-stack y sistemas críticos orientados a rendimiento',
-				feature4: 'Comunicación clara, procesos transparentes y entregas responsables',
+				feature1: 'Soluciones tecnológicas para negocios 100% personalizadas, alineadas a los objetivos reales de cada negocio',
+				feature2: 'Arquitecturas de código modernas, escalables y preparadas para crecer junto a tu empresa',
+				feature3: 'Experiencia sólida en programación de backend, full-stack y sistemas críticos orientados a rendimiento',
+				feature4: 'Comunicación clara, procesos transparentes y entregas de código responsables',
 			},
 			missionTitle: 'Nuestra misión',
 			missionText:
-				'Impulsar el crecimiento digital de empresas mediante soluciones tecnológicas confiables, eficientes y bien diseñadas. Trabajamos de forma cercana con cada cliente para entender su negocio y desarrollar productos que resuelvan problemas reales, aporten valor y puedan evolucionar en el tiempo.',
+				'Impulsar el crecimiento digital de empresas mediante soluciones tecnológicas de programación de código confiables, eficientes y bien diseñadas. Trabajamos de forma cercana con cada cliente para entender su negocio y desarrollar productos de código que resuelvan problemas reales, aporten valor y puedan evolucionar en el tiempo.',
 		},
 		footer: {
 			description:
-				'Empresa de desarrollo IT en Argentina. Creamos soluciones digitales modernas, rápidas y seguras.',
+				'Empresa de programación de código y desarrollo IT en Argentina. Creamos soluciones tecnológicas para negocios, desarrollo de código modernas, rápidas y seguras.',
 			quickLinks: 'Enlaces rápidos',
 			connect: 'Conéctate',
 			rights: 'Todos los derechos reservados.',
@@ -191,24 +201,24 @@ const translations = {
 			cta: 'Get a free consultation',
 		},
 		services: {
-			title: 'Our premium development services',
+			title: 'Our premium code development and programming services',
 			subtitle:
-				'Click on a service below to see key technological solutions and detailed focus areas.',
+				'Click on a service below to see technological solutions for business and detailed focus areas.',
 			detailsLabel: 'Key details',
 			items: {
 				fullStack: {
-					title: 'Full-stack web development (React / Next.js)',
+					title: 'Full-stack web development and code programming (React / Next.js)',
 					description:
-						'**Modern, high-performance development:** We create complete and scalable web applications. We use **Next.js** and **React** to ensure ultra-fast loading times (SSR/SSG), excellent SEO, and a fluid user experience, ideal for complex dashboards, client portals, and business platforms.',
+						'**Modern, high-performance code development:** We create complete and scalable web applications through professional programming. We use **Next.js** and **React** to ensure ultra-fast loading times (SSR/SSG), excellent SEO, and a fluid user experience, ideal for complex dashboards, client portals, and business platforms.',
 					details:
-						'Specializing in TypeScript, responsive design with Tailwind CSS, speed optimization (Core Web Vitals), and modular architecture for easy maintenance.',
+						'Specializing in clean code programming, TypeScript, responsive design with Tailwind CSS, speed optimization (Core Web Vitals), and modular architecture for easy maintenance.',
 				},
 				backend: {
-					title: 'Backend & API development (.NET Core / Node.js)',
+					title: 'Backend, code programming & API development (.NET Core / Node.js)',
 					description:
-						'**Robust and secure core systems:** We design and build the infrastructure that powers your application. We focus on RESTful and GraphQL APIs using **.NET Core** (C#) or **Node.js/Express**, guaranteeing security, performance, and horizontal scalability.',
+						'**Robust and secure core systems through programming:** We design and build the code infrastructure that powers your application. We focus on RESTful and GraphQL APIs using **.NET Core** (C#) or **Node.js/Express**, guaranteeing security, performance, and horizontal scalability.',
 					details:
-						'Clean Architecture/DDD implementation, advanced authentication (JWT), database management (SQL Server, PostgreSQL), and exhaustive testing.',
+						'Clean Architecture/DDD implementation, advanced programming of code authentication (JWT), database management (SQL Server, PostgreSQL), and exhaustive testing.',
 				},
 				mobile: {
 					title: 'Mobile app development (Android & React Native)',
@@ -225,18 +235,18 @@ const translations = {
 						'High-availability environment configuration, backup strategies, cloud cost reduction, and infrastructure security optimization.',
 				},
 				business: {
-					title: 'Business systems & workflow automation',
+					title: 'Business systems & workflow code automation',
 					description:
-						'**Efficiency through software:** We transform manual processes into automated systems. We build custom software, such as inventory management systems, internal CRMs, booking systems, and analytics platforms.',
+						'**Technological solutions for business through programming:** We transform manual processes into automated systems through custom code development. We build business software such as inventory management systems, internal CRMs, and analytics platforms.',
 					details:
-						'Integration with existing (legacy) systems, development of personalized payment modules, and automation of reports and email marketing.',
+						'Code programming for integration with existing systems, development of personalized payment modules, and automation of reports.',
 				},
 				consulting: {
-					title: 'Technical consulting & software advisory',
+					title: 'Technical consulting, programming & code advisory',
 					description:
-						'**Strategic technology guidance:** We offer expert consulting to help you make informed decisions about your technology stack, architecture, and development roadmap. Ideal for startups or companies undergoing digital transformation.',
+						'**Technological solutions for business through consulting:** We offer expert consulting in code development and programming to help you make informed decisions about your technology stack, architecture, and development roadmap. Ideal for startups or companies seeking technological solutions.',
 					details:
-						'Code auditing, migration planning, project estimation, and internal technical team training.',
+						'Code auditing, programming migration planning, project estimation, and internal technical team training.',
 				},
 			},
 		},
@@ -244,6 +254,16 @@ const translations = {
 			title: 'Technologies we use',
 			description:
 				'We choose reliable, modern and secure technologies to deliver long-lasting digital solutions.',
+		},
+		stats: {
+			title: 'Our code development achievements',
+			description: 'Years of experience developing technological solutions for business through professional programming',
+			projectsCompleted: 'Projects completed',
+			yearsExperience: 'Years of experience',
+			satisfiedClients: 'Satisfied clients',
+			coffeeCups: 'Cups of coffee',
+			ourClientsTitle: 'Our clients',
+			ourClientsDescription: 'Companies that trust our code programming',
 		},
 		portfolio: {
 			title: 'Portfolio',
@@ -285,7 +305,7 @@ const translations = {
 		about: {
 			title: 'About us',
 			description:
-				'ZINNIA Code is a software development company created in collaboration by two developers from the city of San Luis, Argentina, trained at the University of La Punta (ULP). We were born with the goal of designing solid, scalable digital solutions aligned with the real needs of each business.\n\nWe specialize in developing modern web applications, robust backend systems, and custom solutions, combining best practices, clean architecture, and a focus on the quality of the final product. We believe in technology as a strategic tool to optimize processes, improve efficiency, and support business growth.',
+				'ZINNIA Code is a code programming and software development company created in collaboration by two programmers from the city of San Luis, Argentina, trained at the University of La Punta (ULP). We were born with the goal of designing technological solutions for business through solid code programming aligned with the real needs of each business.\n\nWe specialize in programming modern web applications, robust code backend systems, and custom solutions through professional programming, combining best practices of code, clean architecture, and a focus on the quality of the final product. We believe in programming and code as a strategic tool to optimize processes, improve efficiency, and support business growth.',
 			teamTitle: 'Our team',
 			teamDescription:
 				'We are a technical team that works closely with each client, prioritizing clear communication, responsibility, and well-built deliveries. Each project is approached with a comprehensive vision: understand the problem, propose the best solution, and build reliable software that can evolve over time.',
@@ -313,21 +333,21 @@ const translations = {
 			title: 'ZINNIA',
 			brand: 'ZINNIA <Code>',
 			description:
-				'We are a software development company based in Argentina. We design and build tailor-made digital solutions that help businesses optimize processes, scale, and create real value. We develop web applications, mobile apps, and enterprise systems with a focus on quality, security, and maintainability.',
+				'We are a code programming and software development company based in Argentina. We design and build technological solutions for business through tailor-made code development that help businesses optimize processes, scale, and create real value. We develop web applications through programming, mobile apps, and enterprise systems with a focus on code quality, security, and maintainability.',
 			featuresTitle: 'Why choose us',
 			features: {
-				feature1: '100% custom solutions aligned to each business\' real goals',
-				feature2: 'Modern, scalable architectures ready to grow with your company',
-				feature3: 'Solid experience in backend, full-stack, and performance-oriented critical systems',
-				feature4: 'Clear communication, transparent processes, and responsible deliveries',
+				feature1: '100% custom technological solutions for business aligned to each business\' real goals',
+				feature2: 'Modern, scalable code architectures ready to grow with your company',
+				feature3: 'Solid experience in programming of backend, full-stack, and performance-oriented critical systems',
+				feature4: 'Clear communication, transparent processes, and responsible code deliveries',
 			},
 			missionTitle: 'Our mission',
 			missionText:
-				'To drive companies\' digital growth through reliable, efficient, and well-designed technology solutions. We work closely with every client to understand their business and deliver products that solve real problems, add value, and can evolve over time.',
+				'To drive companies\' digital growth through reliable, efficient, and well-designed code programming solutions. We work closely with every client to understand their business and deliver code products that solve real problems, add value, and can evolve over time.',
 		},
 		footer: {
 			description:
-				'An IT development company based in Argentina. We build modern, fast and secure digital solutions.',
+				'A code programming and IT development company based in Argentina. We build technological solutions for business, modern code development, fast and secure digital solutions.',
 			quickLinks: 'Quick Links',
 			connect: 'Connect',
 			rights: 'All rights reserved.',
@@ -356,24 +376,26 @@ function getTranslation(language: Language, key: string) {
 }
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-	const [mounted, setMounted] = useState(false);
-	const [language, setLanguage] = useState<Language>(defaultLanguage);
-
-	// Solo leer localStorage después del montaje del cliente
-	useEffect(() => {
-		setMounted(true);
-		const stored = localStorage.getItem(storageKey);
-		if (stored === 'es' || stored === 'en') {
-			setLanguage(stored);
+	// Initialize mounted as true to avoid setState in useEffect
+	const [language, setLanguage] = useState<Language>(() => {
+		// Read from localStorage during initialization
+		if (typeof window !== 'undefined') {
+			const stored = localStorage.getItem(storageKey);
+			if (stored === 'es' || stored === 'en') {
+				return stored;
+			}
 		}
-	}, []);
+		return defaultLanguage;
+	});
 
-	// Guardar idioma y actualizar document.lang
+	// Update document.lang when language changes
 	useEffect(() => {
-		if (!mounted) return;
-		localStorage.setItem(storageKey, language);
 		document.documentElement.lang = language;
-	}, [language, mounted]);
+		// Save to localStorage
+		if (typeof window !== 'undefined') {
+			localStorage.setItem(storageKey, language);
+		}
+	}, [language]);
 
 	const value = useMemo<LanguageContextValue>(
 		() => ({

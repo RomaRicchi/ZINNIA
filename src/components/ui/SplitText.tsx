@@ -43,13 +43,18 @@ const SplitText: React.FC<SplitTextProps> = ({
 	repeatDelay = 3,
 }) => {
 	const ref = useRef<HTMLParagraphElement>(null);
-	const [fontsLoaded, setFontsLoaded] = useState<boolean>(false);
+	// Initialize state based on current font status to avoid setState in effect
+	const [fontsLoaded, setFontsLoaded] = useState<boolean>(() => {
+		if (typeof document !== 'undefined') {
+			return document.fonts.status === 'loaded';
+		}
+		return false;
+	});
 	const tweenRef = useRef<gsap.core.Tween | null>(null);
 
 	useEffect(() => {
-		if (document.fonts.status === 'loaded') {
-			setFontsLoaded(true);
-		} else {
+		// Listen for font loading completion
+		if (typeof document !== 'undefined' && document.fonts.status !== 'loaded') {
 			document.fonts.ready.then(() => {
 				setFontsLoaded(true);
 			});
@@ -83,7 +88,7 @@ const SplitText: React.FC<SplitTextProps> = ({
 					: marginValue < 0
 					? `-=${Math.abs(marginValue)}${marginUnit}`
 					: `+=${marginValue}${marginUnit}`;
-			const start = `top ${startPct}%${sign}`;
+			// const startPosition = `top ${startPct}%${sign}`; // Reservado para futura implementación de ScrollTrigger
 			let targets: Element[] = [];
 			const assignTargets = (self: GSAPSplitText) => {
 				if (splitType.includes('chars') && self.chars.length)

@@ -25,13 +25,13 @@ const StarBorder = <T extends ElementType = 'button'>({
 	...rest
 }: StarBorderProps<T>) => {
 	const Component = (as || 'button') as ElementType;
-	const inlineStyle = ((rest as any)?.style as CSSProperties) || {};
+	const inlineStyle = (rest as ComponentPropsWithoutRef<T>).style as CSSProperties || {};
 
 	return (
 		<div className="star-item-wrapper flex">
 			<Component
 				className={`star-border-container ${className}`}
-				{...(rest as any)}
+				{...rest}
 				style={{
 					display: 'flex',
 					alignItems: 'center',

@@ -8,15 +8,15 @@ export default function ContactCTA() {
   return (
     <section
       id="contact"
-      className="section-default w-full text-center relative pt-32 px-4 md:px-6 lg:px-8"
+      className="section-default w-full text-center relative py-1 px-4 md:px-6 lg:px-8"
       aria-labelledby="contact-cta-title"
     >
-      <div className="w-full" style={{
+      <div className="w-full max-w-4xl mx-auto" style={{
         backgroundImage: 'url("/img/zinnia.jpg")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        padding: '10rem 2rem',
+        padding: '2rem 1.5rem',
         borderRadius: '1rem',
         position: 'relative',
       }}
@@ -33,15 +33,15 @@ export default function ContactCTA() {
         zIndex: 0
       }} />
 
-      <div style={{ position: 'relative', zIndex: 1 }}>
+      <div className="relative z-10 flex flex-col items-center justify-center">
         <h2
           id="contact-cta-title"
-          className="text-3xl md:text-4xl font-bold text-white"
+          className="text-2xl md:text-3xl lg:text-3xl font-bold text-white"
         >
           {t('contact.title')}
         </h2>
 
-        <p className="text-gray-300 mt-4 text-lg">
+        <p className="text-gray-300 mt-4 text-sm md:text-base lg:text-lg max-w-2xl">
           {t('contact.description')}
         </p>
 
@@ -50,7 +50,7 @@ export default function ContactCTA() {
             href="https://wa.me/5492664297704"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-10 py-4 rounded-full bg-white/10 backdrop-blur border border-white/20 text-white text-lg hover:bg-white/20 transition inline-block"
+            className="px-6 py-3 md:px-8 lg:px-10 md:py-4 rounded-full bg-white/10 backdrop-blur border border-white/20 text-white text-sm md:text-base hover:bg-white/20 transition inline-block"
           >
             Contacta a Fermin
           </a>
@@ -58,7 +58,7 @@ export default function ContactCTA() {
             href="https://wa.me/5492664750247"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-10 py-4 rounded-full bg-white/10 backdrop-blur border border-white/20 text-white text-lg hover:bg-white/20 transition inline-block"
+            className="px-6 py-3 md:px-8 lg:px-10 md:py-4 rounded-full bg-white/10 backdrop-blur border border-white/20 text-white text-sm md:text-base hover:bg-white/20 transition inline-block"
           >
             Contacta a Roma
           </a>

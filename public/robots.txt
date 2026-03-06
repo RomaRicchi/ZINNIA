@@ -1,4 +1,59 @@
+# Robots.txt optimizado para ZINNIA Code
+# Actualizado: 2026-03-06
+
+# Permitir todos los crawlers principales
 User-agent: *
 Allow: /
 
+# Bloquear acceso a archivos y directorios sensibles
+Disallow: /api/
+Disallow: /_next/
+Disallow: /.env*
+Disallow: /private/
+Disallow: /admin/
+Disallow: /temp/
+Disallow: /tmp/
+
+# Permitir crawlers específicos con reglas especiales
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+# Sitemaps
 Sitemap: https://zinnia-code.com.ar/sitemap.xml
+
+# Reglas adicionales para SEO
+# No bloquear recursos necesarios para rendering
+Allow: /images/
+Allow: /img/
+Allow: /public/
+Allow: *.css
+Allow: *.js
+Allow: *.webp
+Allow: *.jpg
+Allow: *.png
+Allow: *.svg
+
+# Optimización para crawlers sociales
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# Prevención de scraping agresivo
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Disallow: /

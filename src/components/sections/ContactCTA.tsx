@@ -12,13 +12,14 @@ export default function ContactCTA() {
       aria-labelledby="contact-cta-title"
     >
       <div className="w-full max-w-4xl mx-auto" style={{
-        backgroundImage: 'url("/img/zinnia.jpg")',
+        backgroundImage: 'url("/img/flor.webp")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         padding: '2rem 1.5rem',
         borderRadius: '1rem',
         position: 'relative',
+        textShadow: '0 2px 8px rgba(0,0,0,0.8)',
       }}
     >
       {/* Overlay oscuro para mejor legibilidad */}

@@ -73,7 +73,7 @@ export default function Header() {
 						}}
 					>
 						<img
-							src="/img/logo-solido-chico-remove.png"
+							src="/img/logo-solido-chico-remove.webp"
 							alt={t('hero.logo1Alt')}
 							style={{ width: '100%', height: '100%' }}
 							className="object-cover"
@@ -94,7 +94,7 @@ export default function Header() {
 						}}
 					>
 						<img
-							src="/img/logo-solido-chico-remove.png"
+							src="/img/logo-solido-chico-remove.webp"
 							alt={t('hero.logo1Alt')}
 							style={{ width: '100%', height: '100%' }}
 							className="object-cover"

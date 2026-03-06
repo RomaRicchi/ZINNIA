@@ -73,7 +73,7 @@ const seoByLang: Record<Language, SeoConfig> = {
 			type: 'website',
 			images: [
 				{
-					url: 'https://zinnia-code.com.ar/img/logo-solido-chico-remove.png',
+					url: 'https://zinnia-code.com.ar/img/logo-solido-chico-remove.webp',
 					width: 1200,
 					height: 630,
 					alt: 'ZINNIA Code - Desarrollo de Software en Argentina',
@@ -87,7 +87,7 @@ const seoByLang: Record<Language, SeoConfig> = {
 			'ZINNIA: Agencia de programación y desarrollo de código en San Luis. Equipo de la Universidad de La Punta. Creamos soluciones tecnológicas para negocios, programas para gimnasios y desarrollo web a medida.',
 			images: [
 				{
-					url: 'https://zinnia-code.com.ar/img/logo-solido-chico-remove.png',
+					url: 'https://zinnia-code.com.ar/img/logo-solido-chico-remove.webp',
 					alt: 'ZINNIA Code - Desarrollo de Software',
 				},
 			],
@@ -136,7 +136,7 @@ const seoByLang: Record<Language, SeoConfig> = {
 			type: 'website',
 			images: [
 				{
-					url: 'https://zinnia-code.com.ar/img/logo-solido-chico-remove.png',
+					url: 'https://zinnia-code.com.ar/img/logo-solido-chico-remove.webp',
 					width: 1200,
 					height: 630,
 					alt: 'ZINNIA Code - Software Development in Argentina',
@@ -150,7 +150,7 @@ const seoByLang: Record<Language, SeoConfig> = {
 				'We develop websites, mobile apps, and digital solutions for businesses in Argentina. Experts in React, Next.js, and full stack development.',
 			images: [
 				{
-					url: 'https://zinnia-code.com.ar/img/logo-solido-chico-remove.png',
+					url: 'https://zinnia-code.com.ar/img/logo-solido-chico-remove.webp',
 					alt: 'ZINNIA Code - Software Development',
 				},
 			],

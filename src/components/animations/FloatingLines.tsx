@@ -575,7 +575,7 @@ export default function FloatingLines({
 					left: 0,
 					width: '100%',
 					height: '100%',
-					backgroundImage: 'url(/img/3d.png)',
+					backgroundImage: 'url(/img/3d.webp)',
 					backgroundSize: 'cover',
 					backgroundPosition: 'center',
 					backgroundRepeat: 'no-repeat',

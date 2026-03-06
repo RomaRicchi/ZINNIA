@@ -8,7 +8,7 @@ const technologies = [
   { name: "TypeScript", logo: "https://cdn.simpleicons.org/typescript/3178C6" },
   { name: "Node.js", logo: "https://cdn.simpleicons.org/nodedotjs/3C873A" },
   { name: "TailwindCSS", logo: "https://cdn.simpleicons.org/tailwindcss/38BDF8" },
-  { name: "AWS", logo: "/img/aws.png" },
+  { name: "AWS", logo: "/img/aws.webp" },
 ];
 
 export default function Technologies() {

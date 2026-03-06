@@ -14,7 +14,7 @@ export default function StructuredData() {
 		url: 'https://zinnia-code.com.ar',
 		logo: {
 			'@type': 'ImageObject',
-			url: 'https://zinnia-code.com.ar/img/logo-solido-chico-remove.png',
+			url: 'https://zinnia-code.com.ar/img/logo-solido-chico-remove.webp',
 			width: 512,
 			height: 512,
 		},
@@ -46,7 +46,7 @@ export default function StructuredData() {
 		'@context': 'https://schema.org',
 		'@type': 'ProfessionalService',
 		name: 'ZINNIA Code',
-		image: 'https://zinnia-code.com.ar/img/logo-solido-chico-remove.png',
+		image: 'https://zinnia-code.com.ar/img/logo-solido-chico-remove.webp',
 		'@id': 'https://zinnia-code.com.ar',
 		url: 'https://zinnia-code.com.ar',
 		telephone: '+54-266-XXX-XXXX',

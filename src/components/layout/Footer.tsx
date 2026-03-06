@@ -47,7 +47,7 @@ export default function Footer() {
           {/* Company Info */}
           <div className="space-y-3 flex flex-col items-center text-center">
             <img
-              src="/img/titulo-solido.png"
+              src="/img/titulo-solido.webp"
               alt={t('hero.logo1Alt')}
               style={{ width: '272px', height: 'auto' }}
               className="opacity-90 rounded-lg"

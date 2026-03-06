@@ -55,14 +55,14 @@ export default function Hero() {
 					/>
 				</div>
 				<div className="hero-logos-inline">
-						<img
-							src="/img/logo-solido-chico-remove.png"
-							alt={t('hero.logo1Alt')}
+							<img
+								src="/img/logo-solido-chico-remove.webp"
+								alt={t('hero.logo1Alt')}
 							className="opacity-90 hero-logo"
 						/>
-						<img
-							src="/img/ZINNIA-remove.png"
-							alt={t('hero.logo2Alt')}
+							<img
+								src="/img/ZINNIA-remove.webp"
+								alt={t('hero.logo2Alt')}
 							className="opacity-90 hero-logo"
 						/>
 				</div>
@@ -81,9 +81,14 @@ export default function Hero() {
 						textAlign="left"
 					/>
 
-					<button className="hero-button pointer-events-auto">
-						{t('hero.cta')}
-					</button>
+					<a
+						className="hero-button pointer-events-auto inline-flex items-center justify-center"
+						href="https://www.instagram.com/zinniacode/"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Visítanos en Instagram
+					</a>
 
 				</div>
 			</main>

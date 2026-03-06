@@ -13,7 +13,7 @@ export default function ZinniaInfo() {
       <div className="zinnia-container">
         <div className="zinnia-title-container">
           <img
-            src="/img/ZINNIA-remove.png"
+            src="/img/ZINNIA-remove.webp"
             alt="ZINNIA"
             className="zinnia-title-image"
           />
@@ -30,7 +30,7 @@ export default function ZinniaInfo() {
             </div>
             <div className="zinnia-image-frame zinnia-description-image-container">
               <img
-                src="/img/trbajo-conjunto.jpg"
+                src="/img/trbajo-conjunto.webp"
                 alt="Trabajo en conjunto"
                 className="zinnia-section-image"
               />
@@ -41,7 +41,7 @@ export default function ZinniaInfo() {
           <div className="zinnia-features-section">
             <div className="zinnia-image-frame zinnia-features-image-container">
               <img
-                src="/img/mano.jpg"
+                src="/img/mano.webp"
                 alt="Mano"
                 className="zinnia-section-image"
               />

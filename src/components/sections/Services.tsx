@@ -10,32 +10,32 @@ const servicesData = [
   {
     key: 'fullStack',
     icon: Code,
-    image: '/images/Full-Stack.png',
+    image: '/images/Full-Stack.webp',
   },
   {
     key: 'backend',
     icon: Server,
-    image: '/images/Backend.png',
+    image: '/images/Backend.webp',
   },
   {
     key: 'mobile',
     icon: Smartphone,
-    image: '/images/Mobile.png',
+    image: '/images/Mobile.webp',
   },
   {
     key: 'cloud',
     icon: Cloud,
-    image: '/images/Cloud.png',
+    image: '/images/Cloud.webp',
   },
   {
     key: 'business',
     icon: Briefcase,
-    image: '/images/Business.png',
+    image: '/images/Business.webp',
   },
   {
     key: 'consulting',
     icon: TrendingUp,
-    image: '/images/Technical.png',
+    image: '/images/Technical.webp',
   },
 ];
 

@@ -38,9 +38,9 @@ export const metadata: Metadata = {
 	description: seo.description,
 	keywords: seo.keywords,
 	icons: {
-		icon: '/img/logo-solido-chico-remove.png',
-		apple: '/img/logo-solido-chico-remove.png',
-		shortcut: '/img/logo-solido-chico-remove.png',
+		icon: '/img/logo-solido-chico-remove.webp',
+		apple: '/img/logo-solido-chico-remove.webp',
+		shortcut: '/img/logo-solido-chico-remove.webp',
 	},
 	openGraph: {
 		title: seo.openGraph.title,
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
 		type: seo.openGraph.type as 'website',
 		images: [
 			{
-				url: '/img/logo-solido-chico-remove.png',
+				url: '/img/logo-solido-chico-remove.webp',
 				width: 1200,
 				height: 630,
 			},

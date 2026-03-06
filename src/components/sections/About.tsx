@@ -11,7 +11,7 @@ export default function About() {
 			className="section-default w-full section-bg relative z-0 pt-20 md:pt-32 pb-20 px-4 md:px-6 lg:px-8"
 			aria-labelledby="about-title"
 			style={{
-				backgroundImage: 'url(/img/logo-tech.png)',
+				backgroundImage: 'url(/img/logo-tech.webp)',
 				backgroundPosition: 'center',
 				backgroundRepeat: 'no-repeat',
 				backgroundSize: 'cover',
